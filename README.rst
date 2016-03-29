@@ -6,25 +6,31 @@
 collective.autoscaling
 ==============================================================================
 
-Tell me what your product does
+This package allows automatic scaling of too large images in Plone sites.
+Images can be either Image content type or any Image field on content types.
 
-Features
+This is totally transparent to the user.
+
+
+Settings
 --------
 
-- Can be bullet points
+- Maximum height at which images will be automatically resized
+- Maximum width at which images will be automatically resized
 
 
 Examples
 --------
 
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
+Let's say that you configured collective.autoscaling to have images with maximum size of height 800px / width 1200px.
+If you upload a big image : height 2000px / width 4000px, then it will be resized to height 600px / width 1200px.
+Aspect ratio is of course preserved.
 
 
-Documentation
--------------
+Limitations
+-----------
 
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
+This add-on works only with Dexterity content types.
 
 
 Translations
@@ -32,7 +38,7 @@ Translations
 
 This product has been translated into
 
-- Klingon (thanks, K'Plai)
+- French
 
 
 Installation
@@ -56,14 +62,6 @@ Contribute
 
 - Issue Tracker: https://github.com/collective/collective.autoscaling/issues
 - Source Code: https://github.com/collective/collective.autoscaling
-- Documentation: https://docs.plone.org/foo/bar
-
-
-Support
--------
-
-If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
 
 
 License

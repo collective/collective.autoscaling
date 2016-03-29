@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="collective.autoscaling">
+
+  <adapter factory=".controlpanel.AutoscalingControlPanelAdapter" />
+
+  <browser:page
+      name="autoscaling-controlpanel"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".controlpanel.AutoscalingControlPanel"
+      permission="cmf.ManagePortal"
+      layer="..interfaces.ICollectiveAutoscalingLayer"
+      />
+
+  <browser:resource
+      name="autoscaling.png"
+      file="autoscaling.png"
+      />
+
+</configure>

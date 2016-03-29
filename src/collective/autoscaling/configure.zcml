@@ -1,0 +1,31 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="collective.autoscaling">
+
+  <i18n:registerTranslations directory="locales" />
+
+  <includeDependencies package="." />
+
+  <include package=".browser" />
+
+  <subscriber
+      for="plone.dexterity.interfaces.IDexterityContent
+           zope.lifecycleevent.ObjectAddedEvent"
+      handler=".subscribers.handle_max_image_size" />
+
+  <subscriber
+      for="plone.dexterity.interfaces.IDexterityContent
+           zope.lifecycleevent.IObjectModifiedEvent"
+      handler=".subscribers.handle_max_image_size" />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="collective.autoscaling"
+      directory="profiles/default"
+      description="Installs the collective.autoscaling add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+</configure>

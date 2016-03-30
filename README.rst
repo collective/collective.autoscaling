@@ -2,6 +2,10 @@
 collective.autoscaling
 ======================
 
+.. image:: https://travis-ci.org/collective/collective.autoscaling.svg?branch=master
+    :target: https://travis-ci.org/collective/collective.autoscaling
+
+
 This package allows automatic scaling of too large images in Plone sites.
 Images can be either Image content type or any Image field on content types.
 

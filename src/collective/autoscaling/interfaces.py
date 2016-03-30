@@ -15,6 +15,13 @@ class ICollectiveAutoscalingSettings(Interface):
     """
     Settings for collective.autoscaling
     """
+    is_enabled = schema.Bool(
+        title=_(u"Enabled"),
+        description=_(u"Enable autoscaling."),
+        required=False,
+        default=True
+    )
+
     image_max_height = schema.Int(
         title=_(u"Images maximum height"),
         description=_(u"Maximum height at which images will be automatically resized."),
@@ -27,4 +34,11 @@ class ICollectiveAutoscalingSettings(Interface):
         description=_(u"Maximum width at which images will be automatically resized."),
         required=False,
         default=1200
+    )
+
+    show_message = schema.Bool(
+        title=_(u"Show message to user"),
+        description=_(u"Display information message to the user when an image has been resized."),
+        required=False,
+        default=False
     )

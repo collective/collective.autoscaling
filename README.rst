@@ -15,8 +15,10 @@ This is totally transparent to the user.
 Settings
 --------
 
-- Maximum height at which images will be automatically resized
-- Maximum width at which images will be automatically resized
+- Enabled (yes / no)
+- Maximum height at which images will be automatically resized (in pixels)
+- Maximum width at which images will be automatically resized (in pixels)
+- Show information message to user when images have been resized (yes / no)
 
 
 Examples

@@ -23,6 +23,14 @@ class AutoscalingControlPanelAdapter(SchemaAdapterBase):
         registry = getUtility(IRegistry)
         self.settings = registry.forInterface(ICollectiveAutoscalingSettings, False)
 
+    def getIsEnabled(self):
+        return self.settings.is_enabled
+
+    def setIsEnabled(self, value):
+        self.settings.is_enabled = value
+
+    is_enabled = property(getIsEnabled, setIsEnabled)
+
     def getImageMaxHeight(self):
         return self.settings.image_max_height
 
@@ -38,6 +46,14 @@ class AutoscalingControlPanelAdapter(SchemaAdapterBase):
         self.settings.image_max_width = value
 
     image_max_width = property(getImageMaxWidth, setImageMaxWidth)
+
+    def getShowMessage(self):
+        return self.settings.show_message
+
+    def setShowMessage(self, value):
+        self.settings.show_message = value
+
+    show_message = property(getShowMessage, setShowMessage)
 
 
 class AutoscalingControlPanel(ControlPanelForm):

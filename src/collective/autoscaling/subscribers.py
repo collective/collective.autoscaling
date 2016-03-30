@@ -3,9 +3,11 @@
 from cStringIO import StringIO
 from plone import api
 from plone.app.imagecropping.interfaces import IImageCroppingUtils
+from zope.i18n import translate
 import PIL.Image
 import logging
 
+from collective.autoscaling import _
 from collective.autoscaling.interfaces import ICollectiveAutoscalingLayer
 from collective.autoscaling.interfaces import ICollectiveAutoscalingSettings
 
@@ -28,6 +30,11 @@ def handle_max_image_size(obj, event):
     request = event.object.REQUEST
     if not ICollectiveAutoscalingLayer.providedBy(request):
         return
+
+    enabled = get_autoscaling_settings('is_enabled')
+    if not enabled:
+        return
+
     croputils = IImageCroppingUtils(obj)
     imageFieldsNames = croputils.image_field_names()
     if not imageFieldsNames:
@@ -60,3 +67,19 @@ def handle_max_image_size(obj, event):
     obj.reindexObject()
     logger.debug('{} images resized for object {}'.format(resized,
                                                           obj.absolute_url()))
+
+    show_message = get_autoscaling_settings('show_message')
+    if show_message:
+        if resized > 1:
+            msgid = _(u'images_have_been_resized',
+                      default=u'${nb} images have been resized on this content.',
+                      mapping={u'nb': resized})
+            message = translate(msgid, context=request)
+            api.portal.show_message(message=message,
+                                    request=request,
+                                    type='info')
+        else:
+            message = _('One image has been resized on this content.')
+            api.portal.show_message(message=message,
+                                    request=request,
+                                    type='info')

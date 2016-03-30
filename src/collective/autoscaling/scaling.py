@@ -30,7 +30,7 @@ def scale_images(obj, request):
 
         maxWidth, maxHeight = get_max_size()
         width, height = image.size
-        if maxHeight > height and maxWidth > width:
+        if maxHeight >= height and maxWidth >= width:
             # No need to resize
             continue
 

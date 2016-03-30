@@ -1,0 +1,15 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:plone="http://namespaces.plone.org/plone"
+           xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+  <include file="configure.zcml" />
+
+  <genericsetup:registerProfile
+      name="testing"
+      title="collective.autoscaling"
+      directory="profiles/testing"
+      description="Installs the collective.autoscaling test profile."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+</configure>

@@ -1,1 +1,2 @@
-- Laurent Lasudry, laurent.lasudry@affinitic.be
+- Laurent Lasudry, Original Author [Affinitic]
+- Espen Moe-Nilssen

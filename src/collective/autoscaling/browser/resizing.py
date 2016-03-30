@@ -3,10 +3,10 @@
 from Products.Five import BrowserView
 from plone import api
 
-from collective.autoscaling.scaling import scale_images
+from collective.autoscaling.resizing import scale_images
 
 
-class ScalingView(BrowserView):
+class ResizingView(BrowserView):
 
     def __call__(self):
         context = self.context

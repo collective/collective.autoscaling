@@ -11,10 +11,10 @@ Images can be either Image content type or any Image field on content types.
 
 This is totally transparent to the user (except if you choose to show message).
 
-There is also a view (``@@rescale-images``) that you can call to scale existing images (under the context of your choice), for example :
+There is also a view (``@@resize-images``) that you can call to scale existing images (under the context of your choice), for example :
 
- - http://localhost:8080/plone/@@rescale-images
- - http://localhost:8080/plone/folder/subfolder/@@rescale-images
+ - http://localhost:8080/plone/@@resize-images
+ - http://localhost:8080/plone/folder/subfolder/@@resize-images
 
 
 Settings

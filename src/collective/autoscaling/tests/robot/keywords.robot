@@ -98,8 +98,8 @@ image '${content-id}' is not scaled down
 
 # View
 
-I call rescale-images view on '${path}'
-    Go to  ${path}/@@rescale-images
+I call resize-images view on '${path}'
+    Go to  ${path}/@@resize-images
 
 Nothing happens on '${path}'
     Page Should Contain  Scaling every images under folder ${path}.

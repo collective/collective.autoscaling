@@ -6,6 +6,7 @@ from plone.app.imagecropping.interfaces import IImageCroppingUtils
 import PIL.Image
 import logging
 
+from collective.autoscaling.interfaces import ICollectiveAutoscalingLayer
 from collective.autoscaling.interfaces import ICollectiveAutoscalingSettings
 
 logger = logging.getLogger('collective.autoscaling')
@@ -24,6 +25,9 @@ def get_max_size():
 
 
 def handle_max_image_size(obj, event):
+    request = event.object.REQUEST
+    if not ICollectiveAutoscalingLayer.providedBy(request):
+        return
     croputils = IImageCroppingUtils(obj)
     imageFieldsNames = croputils.image_field_names()
     if not imageFieldsNames:

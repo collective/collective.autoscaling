@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
-"POT-Creation-Date: 2016-03-29 14:57+0000\n"
+"POT-Creation-Date: 2016-03-30 08:51+0000\n"
 "PO-Revision-Date: 2014-05-06 11:41+0000\n"
 "Last-Translator: support@imio.be\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,26 +20,52 @@ msgstr ""
 msgid "Autoscaling"
 msgstr "Redimensionnement automatique"
 
-#: ../browser/controlpanel.py:45
+#: ../browser/controlpanel.py:61
 msgid "Autoscaling settings"
 msgstr "Paramètres de redimensionnement automatique"
 
+#: ../interfaces.py:41
+msgid "Display information message to the user when an image has been resized."
+msgstr "Afficher un message d'information à l'utilisateur quand une image a été redimmensionnée."
+
+#: ../interfaces.py:20
+msgid "Enable autoscaling."
+msgstr "Activer le redimensionnement automatique."
+
 #: ../interfaces.py:19
+msgid "Enabled"
+msgstr "Activé"
+
+#: ../interfaces.py:26
 msgid "Images maximum height"
 msgstr "Hauteur maximale pour les images"
 
-#: ../interfaces.py:26
+#: ../interfaces.py:33
 msgid "Images maximum width"
 msgstr "Largeur maximale pour les images"
 
-#: ../browser/controlpanel.py:46
-msgid "Lets you change the settings of images autoscaling feature"
-msgstr "Vous permet de configurer les paramètres de redimensionnement automatique des images"
-
-#: ../interfaces.py:20
-msgid "Maximum height at which images will be automatically resized."
-msgstr "Hauteur à laquelle les images trop grandes vont être automatiquement redimmensionnées"
+#: ../browser/controlpanel.py:62
+msgid "Lets you change the settings of images autoscaling feature."
+msgstr "Vous permet de configurer les paramètres de redimensionnement automatique des images."
 
 #: ../interfaces.py:27
+msgid "Maximum height at which images will be automatically resized."
+msgstr "Hauteur à laquelle les images trop grandes vont être automatiquement redimmensionnées."
+
+#: ../interfaces.py:34
 msgid "Maximum width at which images will be automatically resized."
-msgstr "Largeur à laquelle les images trop grandes vont être automatiquement redimmensionnées"
+msgstr "Largeur à laquelle les images trop grandes vont être automatiquement redimmensionnées."
+
+#: ../subscribers.py:82
+msgid "One image has been resized on this content."
+msgstr "Une image a été redimmensionnée automatiquement pour ce contenu."
+
+#: ../interfaces.py:40
+msgid "Show message to user"
+msgstr "Afficher un message d'information"
+
+#. Default: "${nb} images have been resized on this content."
+#: ../subscribers.py:74
+msgid "images_have_been_resized"
+msgstr "${nb} images ont été redimmensionnées automatiquement pour ce contenu."
+

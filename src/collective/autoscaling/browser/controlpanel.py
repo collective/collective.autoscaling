@@ -59,5 +59,5 @@ class AutoscalingControlPanelAdapter(SchemaAdapterBase):
 class AutoscalingControlPanel(ControlPanelForm):
 
     label = _("Autoscaling settings")
-    description = _("Lets you change the settings of images autoscaling feature")
+    description = _("Lets you change the settings of images autoscaling feature.")
     form_fields = form.FormFields(ICollectiveAutoscalingSettings)

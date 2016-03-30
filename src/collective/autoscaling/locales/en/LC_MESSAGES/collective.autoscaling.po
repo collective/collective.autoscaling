@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-03-29 14:57+0000\n"
+"POT-Creation-Date: 2016-03-30 08:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,27 +18,52 @@ msgstr ""
 msgid "Autoscaling"
 msgstr ""
 
-#: ../browser/controlpanel.py:45
+#: ../browser/controlpanel.py:61
 msgid "Autoscaling settings"
 msgstr ""
 
-#: ../interfaces.py:19
-msgid "Images maximum height"
-msgstr ""
-
-#: ../interfaces.py:26
-msgid "Images maximum width"
-msgstr ""
-
-#: ../browser/controlpanel.py:46
-msgid "Lets you change the settings of images autoscaling feature"
+#: ../interfaces.py:41
+msgid "Display information message to the user when an image has been resized."
 msgstr ""
 
 #: ../interfaces.py:20
-msgid "Maximum height at which images will be automatically resized."
+msgid "Enable autoscaling."
+msgstr ""
+
+#: ../interfaces.py:19
+msgid "Enabled"
+msgstr ""
+
+#: ../interfaces.py:26
+msgid "Images maximum height"
+msgstr ""
+
+#: ../interfaces.py:33
+msgid "Images maximum width"
+msgstr ""
+
+#: ../browser/controlpanel.py:62
+msgid "Lets you change the settings of images autoscaling feature."
 msgstr ""
 
 #: ../interfaces.py:27
+msgid "Maximum height at which images will be automatically resized."
+msgstr ""
+
+#: ../interfaces.py:34
 msgid "Maximum width at which images will be automatically resized."
+msgstr ""
+
+#: ../subscribers.py:82
+msgid "One image has been resized on this content."
+msgstr ""
+
+#: ../interfaces.py:40
+msgid "Show message to user"
+msgstr ""
+
+#. Default: "${nb} images have been resized on this content."
+#: ../subscribers.py:74
+msgid "images_have_been_resized"
 msgstr ""
 

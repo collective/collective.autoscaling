@@ -32,3 +32,5 @@ src/collective/autoscaling/locales/en/.DS_Store
 src/collective/autoscaling/locales/.DS_Store
 
 src/collective/autoscaling/.DS_Store
+
+*.pyc

@@ -36,8 +36,8 @@ I change settings to width '${setting_width}' and height '${setting_height}'
 
 # Content manipulation
 
-I upload a big image called '${title}'
-    Go to  ${TEST_FOLDER}
+I upload a big image called '${title}' in folder '${folder}'
+    Go to  ${folder}
     Open Add New Menu
     Click Link  link=Image
     Wait Until Page Contains  Image
@@ -94,3 +94,17 @@ information message for multiples images ('${nb}') is shown
 image '${content-id}' is not scaled down
     Go to  ${TEST_FOLDER}/${content-id}/view
     Page Should Contain  Size: 64KB
+
+
+# View
+
+I call rescale-images view on '${path}'
+    Go to  ${path}/@@rescale-images
+
+Nothing happens on '${path}'
+    Page Should Contain  Scaling every images under folder ${path}.
+    Page Should Contain  Nothing has to be done.
+
+'${nb}' images were resized on '${path}'
+    Page Should Contain  Scaling every images under folder ${path}.
+    Page Should Contain  Finished to resize ${nb} images.

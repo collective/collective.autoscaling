@@ -4,6 +4,22 @@
     i18n_domain="collective.autoscaling">
 
   <browser:page
+      name="rescale-images"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".scaling.ScalingView"
+      permission="cmf.ManagePortal"
+      layer="..interfaces.ICollectiveAutoscalingLayer"
+      />
+
+  <browser:page
+      name="rescale-images"
+      for="plone.dexterity.interfaces.IDexterityContent"
+      class=".scaling.ScalingView"
+      permission="cmf.ManagePortal"
+      layer="..interfaces.ICollectiveAutoscalingLayer"
+      />
+
+  <browser:page
       name="autoscaling-controlpanel"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       class=".controlpanel.AutoscalingControlPanel"

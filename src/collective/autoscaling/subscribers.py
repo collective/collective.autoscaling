@@ -54,7 +54,9 @@ def handle_max_image_size(obj, event):
         imageField.data = cropped_image_file.getvalue()
         resized += 1
 
-    if resized > 0:
-        obj.reindexObject()
-        logger.debug('%s images resized for object %s' % (resized,
+    if resized == 0:
+        return
+
+    obj.reindexObject()
+    logger.debug('{} images resized for object {}'.format(resized,
                                                           obj.absolute_url()))

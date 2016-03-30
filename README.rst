@@ -21,7 +21,7 @@ Settings
 - Show information message to user when images have been resized (yes / no)
 
 
-Examples
+Use case
 --------
 
 1. You configure collective.autoscaling to have images with maximum size of height 800px / width 1200px.

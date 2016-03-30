@@ -3,6 +3,7 @@
 from cStringIO import StringIO
 from plone import api
 from plone.app.robotframework.remote import RemoteLibrary
+from plone.namedfile.file import NamedBlobImage
 import PIL.Image
 
 
@@ -14,7 +15,10 @@ class Image(RemoteLibrary):
         """
         portal = api.portal.get()
         image = portal.restrictedTraverse(image_url)
-        data = image.image.data
+        if isinstance(image, NamedBlobImage):
+            data = image.data
+        else:
+            data = image.image.data
         imageFile = StringIO(data)
         image = PIL.Image.open(imageFile)
         return image.size

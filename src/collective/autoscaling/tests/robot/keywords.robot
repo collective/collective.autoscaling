@@ -6,6 +6,8 @@ ${TEST_FOLDER} =  ${PLONE_URL}/${TEST_FOLDER_ID}
 
 *** Keywords ***
 
+# Settings
+
 I am logged in as a ${role}
   Enable autologin as  ${role}
   Go to  ${PLONE_URL}
@@ -18,6 +20,22 @@ I access collective.autoscaling settings
     Click link  link=Autoscaling
     Page Should Contain  Lets you change the settings of images autoscaling feature.
 
+I choose to show message to user
+    Select Checkbox  id=form.show_message
+    Click Button  Save
+
+I disabled autoscaling
+    Unselect Checkbox  id=form.is_enabled
+    Click Button  Save
+
+I change settings to width '${setting_width}' and height '${setting_height}'
+    Input text  name=form.image_max_width  ${setting_width}
+    Input text  name=form.image_max_height  ${setting_height}
+    Click Button  Save
+
+
+# Content manipulation
+
 I upload a big image called '${title}'
     Go to  ${TEST_FOLDER}
     Open Add New Menu
@@ -29,29 +47,50 @@ I upload a big image called '${title}'
     Wait Until Page Contains  Item created
     Page Should Contain  Item created
 
-image '${content-id}' is scaled down
+I create a content called '${title}' with two image fields using image '${image}'
+    Go to  ${TEST_FOLDER}
+    Open Add New Menu
+    Click Link  link=dexterity content type with two image fields
+    Input text  name=form.widgets.IDublinCore.title  ${title}
+    Choose File  name=form.widgets.first_image  ${PATH_TO_TEST_FILES}/${image}
+    Choose File  name=form.widgets.second_image  ${PATH_TO_TEST_FILES}/${image}
+    Click Button  Save
+    Wait Until Page Contains  Item created
+    Page Should Contain  Item created
+
+I delete the image '${content-id}'
+    Delete image  ${TEST_FOLDER_ID}/${content-id}
+
+
+# Checks
+
+image '${content-id}' is scaled down to width '${setting_width}' and height '${setting_height}' and size '${size}'
     Go to  ${TEST_FOLDER}/${content-id}/view
-    Page Should Contain  Size: 47KB
+    Page Should Contain  Size: ${size}
     ${size} =  image dimensions of  ${TEST_FOLDER_ID}/${content-id}
     ${width} =  Get From List  ${size}  0
     ${height} =  Get From List  ${size}  1
-    Should Be Equal As Strings  ${width}  1200
-    Should Be Equal As Strings  ${height}  600
+    Should Be Equal As Strings  ${width}  ${setting_width}
+    Should Be Equal As Strings  ${height}  ${setting_height}
 
-I choose to show message to user
-    Select Checkbox  id=form.show_message
-    Click Button  Save
+both images are scaled down for content '${title}' to width '${setting_width}' and height '${setting_height}'
+    ${size} =  image dimensions of  ${TEST_FOLDER_ID}/${title}/first_image
+    ${width} =  Get From List  ${size}  0
+    ${height} =  Get From List  ${size}  1
+    Should Be Equal As Strings  ${width}  ${setting_width}
+    Should Be Equal As Strings  ${height}  ${setting_height}
+    ${size} =  image dimensions of  ${TEST_FOLDER_ID}/${title}/second_image
+    ${width} =  Get From List  ${size}  0
+    ${height} =  Get From List  ${size}  1
+    Should Be Equal As Strings  ${width}  ${setting_width}
+    Should Be Equal As Strings  ${height}  ${setting_height}
 
-information message is shown
+information message for one image is shown
     Page Should Contain  One image has been resized on this content.
 
-I disabled autoscaling
-    Unselect Checkbox  id=form.is_enabled
-    Click Button  Save
+information message for multiples images ('${nb}') is shown
+    Page Should Contain  ${nb} images have been resized on this content.
 
 image '${content-id}' is not scaled down
     Go to  ${TEST_FOLDER}/${content-id}/view
     Page Should Contain  Size: 64KB
-
-I delete the image '${content-id}'
-    Delete image  ${TEST_FOLDER_ID}/${content-id}

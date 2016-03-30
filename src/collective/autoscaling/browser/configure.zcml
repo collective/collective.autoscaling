@@ -3,8 +3,6 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="collective.autoscaling">
 
-  <adapter factory=".controlpanel.AutoscalingControlPanelAdapter" />
-
   <browser:page
       name="autoscaling-controlpanel"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"

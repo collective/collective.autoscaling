@@ -21,16 +21,16 @@ I access collective.autoscaling settings
     Page Should Contain  Lets you change the settings of images autoscaling feature.
 
 I choose to show message to user
-    Select Checkbox  id=form.show_message
+    Select Checkbox  id=form-widgets-show_message-0
     Click Button  Save
 
 I disabled autoscaling
-    Unselect Checkbox  id=form.is_enabled
+    Unselect Checkbox  id=form-widgets-is_enabled-0
     Click Button  Save
 
 I change settings to width '${setting_width}' and height '${setting_height}'
-    Input text  name=form.image_max_width  ${setting_width}
-    Input text  name=form.image_max_height  ${setting_height}
+    Input text  id=form-widgets-image_max_width  ${setting_width}
+    Input text  id=form-widgets-image_max_height  ${setting_height}
     Click Button  Save
 
 

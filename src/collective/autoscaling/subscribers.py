@@ -5,8 +5,8 @@ from zope.i18n import translate
 
 from collective.autoscaling import _
 from collective.autoscaling.interfaces import ICollectiveAutoscalingLayer
-from collective.autoscaling.utils import get_autoscaling_settings
 from collective.autoscaling.scaling import scale_images
+from collective.autoscaling.utils import get_autoscaling_settings
 
 
 def handle_max_image_size(obj, event):

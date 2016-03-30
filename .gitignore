@@ -20,3 +20,15 @@ output.xml
 *.swp
 log.html
 report.html
+
+src/collective/.DS_Store
+
+*.mo
+
+src/collective/autoscaling/locales/no/.DS_Store
+
+src/collective/autoscaling/locales/en/.DS_Store
+
+src/collective/autoscaling/locales/.DS_Store
+
+src/collective/autoscaling/.DS_Store

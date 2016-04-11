@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: English\n"
-"POT-Creation-Date: 2016-03-30 08:51+0000\n"
+"POT-Creation-Date: 2016-04-11 13:21+0000\n"
 "PO-Revision-Date: 2016-03-30 11:42+0100\n"
 "Last-Translator: Espen Moe-Nilssen <espen@medialog.no>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,13 +20,13 @@ msgstr ""
 msgid "Autoscaling"
 msgstr ""
 
-#: ../browser/controlpanel.py:61
+#: ../browser/controlpanel.py:14
 msgid "Autoscaling settings"
 msgstr ""
 
-#: ../interfaces.py:41
+#: ../interfaces.py:43
 msgid "Display information message to the user when an image has been resized."
-msgstr ""
+msgstr "Show message when an image has been down sampled."
 
 #: ../interfaces.py:20
 msgid "Enable autoscaling."
@@ -38,34 +38,34 @@ msgstr ""
 
 #: ../interfaces.py:26
 msgid "Images maximum height"
-msgstr ""
+msgstr "Maximum Image Height"
 
-#: ../interfaces.py:33
+#: ../interfaces.py:34
 msgid "Images maximum width"
-msgstr ""
+msgstr "Maximum Image Width"
 
-#: ../browser/controlpanel.py:62
+#: ../browser/controlpanel.py:15
 msgid "Lets you change the settings of images autoscaling feature."
 msgstr ""
 
 #: ../interfaces.py:27
 msgid "Maximum height at which images will be automatically resized."
-msgstr "Maximum height at which images will be automatically (down sampled)"
+msgstr "Higher images will be down sampled."
 
-#: ../interfaces.py:34
+#: ../interfaces.py:35
 msgid "Maximum width at which images will be automatically resized."
-msgstr ""
-"Maximum width at which images will be automatically resized (down sampled)"
+msgstr "Wider images will be down sampled."
 
-#: ../subscribers.py:82
+#: ../subscribers.py:36
 msgid "One image has been resized on this content."
-msgstr ""
+msgstr "One image was down sampled on this content."
 
-#: ../interfaces.py:40
+#: ../interfaces.py:42
 msgid "Show message to user"
 msgstr ""
 
 #. Default: "${nb} images have been resized on this content."
-#: ../subscribers.py:74
+#: ../subscribers.py:28
 msgid "images_have_been_resized"
-msgstr ""
+msgstr "${nb} images were down sampled on this content."
+

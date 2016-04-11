@@ -26,6 +26,7 @@ class ICollectiveAutoscalingSettings(Interface):
         title=_(u"Images maximum height"),
         description=_(u"Maximum height at which images will be automatically resized."),
         required=False,
+        min=1,
         default=800
     )
 
@@ -33,6 +34,7 @@ class ICollectiveAutoscalingSettings(Interface):
         title=_(u"Images maximum width"),
         description=_(u"Maximum width at which images will be automatically resized."),
         required=False,
+        min=1,
         default=1200
     )
 

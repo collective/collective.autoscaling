@@ -39,7 +39,7 @@ Limitations
 
 This add-on works only with Dexterity content types.
 
-It has been developed on Plone 4.3.7.
+It has been developed on Plone 4.3.7, but should work with Plone 5, too.
 
 
 Translations

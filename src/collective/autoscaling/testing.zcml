@@ -2,6 +2,8 @@
            xmlns:plone="http://namespaces.plone.org/plone"
            xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
 
+  <include package="plone.app.contenttypes" />
+
   <include file="configure.zcml" />
 
   <genericsetup:registerProfile

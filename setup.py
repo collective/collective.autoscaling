@@ -46,7 +46,6 @@ setup(
     install_requires=[
         'plone.api',
         'setuptools',
-        'plone.app.imagecropping',
         'Products.CMFDefault',
     ],
     extras_require={

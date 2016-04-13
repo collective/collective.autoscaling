@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 from cStringIO import StringIO
-from plone.app.imagecropping.interfaces import IImageCroppingUtils
 import PIL.Image
 import logging
 
 from collective.autoscaling.utils import get_autoscaling_settings
+from collective.autoscaling.utils import get_image_fields
 
 logger = logging.getLogger('collective.autoscaling')
 
@@ -17,14 +17,13 @@ def get_max_size():
 
 
 def scale_images(obj, request):
-    croputils = IImageCroppingUtils(obj)
-    imageFieldsNames = croputils.image_field_names()
+    imageFieldsNames = get_image_fields(obj)
     if not imageFieldsNames:
         return 0
 
     resized = 0
     for imageFieldName in imageFieldsNames:
-        imageField = croputils.get_image_field(imageFieldName)
+        imageField = getattr(obj, imageFieldName)
         original_file = StringIO(imageField.data)
         image = PIL.Image.open(original_file)
 

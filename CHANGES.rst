@@ -5,7 +5,8 @@ Changelog
 1.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Remove dependency on plone.app.imagecropping (#1)
+  [laulaz]
 
 
 1.0 (2016-04-11)

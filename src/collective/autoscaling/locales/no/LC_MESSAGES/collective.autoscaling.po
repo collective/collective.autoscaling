@@ -25,7 +25,7 @@ msgid "Autoscaling settings"
 msgstr "Skaleringsinnstillinger"
 
 #: ../interfaces.py:43
-msgid "Display information message to the user when an image has been resized."
+msgid "Show message when an image has been down sampled."
 msgstr "Vis informasjon til bruker om at bildet har blitt skalert ned"
 
 #: ../interfaces.py:20
@@ -37,11 +37,11 @@ msgid "Enabled"
 msgstr "Aktivert"
 
 #: ../interfaces.py:26
-msgid "Images maximum height"
+msgid "Maximum Image Height"
 msgstr "Maksimum billedhøyde"
 
 #: ../interfaces.py:34
-msgid "Images maximum width"
+msgid "Maximum Image Width"
 msgstr "Maksimum billedbredde"
 
 #: ../browser/controlpanel.py:15
@@ -49,22 +49,22 @@ msgid "Lets you change the settings of images autoscaling feature."
 msgstr "Lar deg endre innstillingene for nedskaleringsfunksjonen"
 
 #: ../interfaces.py:27
-msgid "Maximum height at which images will be automatically resized."
+msgid "Higher images will be down sampled."
 msgstr "Maksimal høyde på  bilder for at de blir nedskalert"
 
 #: ../interfaces.py:35
-msgid "Maximum width at which images will be automatically resized."
+msgid "Wider images will be down sampled."
 msgstr "Maksimal bredde på  bilder for at de blir nedskalert"
 
 #: ../subscribers.py:36
-msgid "One image has been resized on this content."
+msgid "One image was down sampled on this content."
 msgstr "Et bilde har blitt nedskalert i dette innholdet."
 
 #: ../interfaces.py:42
 msgid "Show message to user"
 msgstr "Vis melding til bruker"
 
-#. Default: "${nb} images have been resized on this content."
+#. Default: "${nb} images were down sampled on this content."
 #: ../subscribers.py:28
 msgid "images_have_been_resized"
 msgstr "${nb} bilder har blitt nedskalert"

@@ -25,7 +25,7 @@ msgid "Autoscaling settings"
 msgstr "Paramètres de redimensionnement automatique"
 
 #: ../interfaces.py:43
-msgid "Display information message to the user when an image has been resized."
+msgid "Show message when an image has been down sampled."
 msgstr "Afficher un message d'information à l'utilisateur quand une image a été redimmensionnée."
 
 #: ../interfaces.py:20
@@ -37,11 +37,11 @@ msgid "Enabled"
 msgstr "Activé"
 
 #: ../interfaces.py:26
-msgid "Images maximum height"
+msgid "Maximum Image Height"
 msgstr "Hauteur maximale pour les images"
 
 #: ../interfaces.py:34
-msgid "Images maximum width"
+msgid "Maximum Image Width"
 msgstr "Largeur maximale pour les images"
 
 #: ../browser/controlpanel.py:15
@@ -49,22 +49,22 @@ msgid "Lets you change the settings of images autoscaling feature."
 msgstr "Vous permet de configurer les paramètres de redimensionnement automatique des images."
 
 #: ../interfaces.py:27
-msgid "Maximum height at which images will be automatically resized."
+msgid "Higher images will be down sampled."
 msgstr "Hauteur à laquelle les images trop grandes vont être automatiquement redimmensionnées."
 
 #: ../interfaces.py:35
-msgid "Maximum width at which images will be automatically resized."
+msgid "Wider images will be down sampled."
 msgstr "Largeur à laquelle les images trop grandes vont être automatiquement redimmensionnées."
 
 #: ../subscribers.py:36
-msgid "One image has been resized on this content."
+msgid "One image was down sampled on this content."
 msgstr "Une image a été redimmensionnée automatiquement pour ce contenu."
 
 #: ../interfaces.py:42
 msgid "Show message to user"
 msgstr "Afficher un message d'information"
 
-#. Default: "${nb} images have been resized on this content."
+#. Default: "${nb} images were down sampled on this content."
 #: ../subscribers.py:28
 msgid "images_have_been_resized"
 msgstr "${nb} images ont été redimmensionnées automatiquement pour ce contenu."

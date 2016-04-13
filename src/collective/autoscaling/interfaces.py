@@ -23,16 +23,16 @@ class ICollectiveAutoscalingSettings(Interface):
     )
 
     image_max_height = schema.Int(
-        title=_(u"Images maximum height"),
-        description=_(u"Maximum height at which images will be automatically resized."),
+        title=_(u"Maximum Image Height"),
+        description=_(u"Higher images will be down sampled."),
         required=False,
         min=1,
         default=800
     )
 
     image_max_width = schema.Int(
-        title=_(u"Images maximum width"),
-        description=_(u"Maximum width at which images will be automatically resized."),
+        title=_(u"Maximum Image Width"),
+        description=_(u"Wider images will be down sampled."),
         required=False,
         min=1,
         default=1200
@@ -40,7 +40,7 @@ class ICollectiveAutoscalingSettings(Interface):
 
     show_message = schema.Bool(
         title=_(u"Show message to user"),
-        description=_(u"Display information message to the user when an image has been resized."),
+        description=_(u"Show message when an image has been down sampled."),
         required=False,
         default=False
     )

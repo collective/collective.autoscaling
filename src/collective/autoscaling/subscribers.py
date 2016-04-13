@@ -26,14 +26,14 @@ def handle_max_image_size(obj, event):
     if show_message:
         if resized > 1:
             msgid = _(u'images_have_been_resized',
-                      default=u'${nb} images have been resized on this content.',
+                      default=u'${nb} images were down sampled on this content.',
                       mapping={u'nb': resized})
             message = translate(msgid, context=request)
             api.portal.show_message(message=message,
                                     request=request,
                                     type='info')
         elif resized == 1:
-            message = _('One image has been resized on this content.')
+            message = _('One image was down sampled on this content.')
             api.portal.show_message(message=message,
                                     request=request,
                                     type='info')

@@ -26,7 +26,7 @@ msgid "Autoscaling settings"
 msgstr ""
 
 #: ../interfaces.py:43
-msgid "Display information message to the user when an image has been resized."
+msgid "Show message when an image has been down sampled."
 msgstr ""
 
 #: ../interfaces.py:20
@@ -38,11 +38,11 @@ msgid "Enabled"
 msgstr ""
 
 #: ../interfaces.py:26
-msgid "Images maximum height"
+msgid "Maximum Image Height"
 msgstr ""
 
 #: ../interfaces.py:34
-msgid "Images maximum width"
+msgid "Maximum Image Width"
 msgstr ""
 
 #: ../browser/controlpanel.py:15
@@ -50,22 +50,22 @@ msgid "Lets you change the settings of images autoscaling feature."
 msgstr ""
 
 #: ../interfaces.py:27
-msgid "Maximum height at which images will be automatically resized."
+msgid "Higher images will be down sampled."
 msgstr ""
 
 #: ../interfaces.py:35
-msgid "Maximum width at which images will be automatically resized."
+msgid "Wider images will be down sampled."
 msgstr ""
 
 #: ../subscribers.py:36
-msgid "One image has been resized on this content."
+msgid "One image was down sampled on this content."
 msgstr ""
 
 #: ../interfaces.py:42
 msgid "Show message to user"
 msgstr ""
 
-#. Default: "${nb} images have been resized on this content."
+#. Default: "${nb} images were down sampled on this content."
 #: ../subscribers.py:28
 msgid "images_have_been_resized"
 msgstr ""

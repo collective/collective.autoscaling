@@ -86,10 +86,10 @@ both images are scaled down for content '${title}' to width '${setting_width}' a
     Should Be Equal As Strings  ${height}  ${setting_height}
 
 information message for one image is shown
-    Page Should Contain  One image has been resized on this content.
+    Page Should Contain  One image was down sampled on this content.
 
 information message for multiples images ('${nb}') is shown
-    Page Should Contain  ${nb} images have been resized on this content.
+    Page Should Contain  ${nb} images were down sampled on this content.
 
 image '${content-id}' is not scaled down
     Go to  ${TEST_FOLDER}/${content-id}/view

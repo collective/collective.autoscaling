@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.1 (unreleased)
+1.1 (2016-04-13)
 ----------------
 
 - Remove dependency on plone.app.imagecropping (#1)

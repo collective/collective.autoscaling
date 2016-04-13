@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
-"POT-Creation-Date: 2016-04-11 13:21+0000\n"
+"POT-Creation-Date: 2016-04-13 13:16+0000\n"
 "PO-Revision-Date: 2014-05-06 11:41+0000\n"
 "Last-Translator: support@imio.be\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,10 +24,6 @@ msgstr "Redimensionnement automatique"
 msgid "Autoscaling settings"
 msgstr "Paramètres de redimensionnement automatique"
 
-#: ../interfaces.py:43
-msgid "Show message when an image has been down sampled."
-msgstr "Afficher un message d'information à l'utilisateur quand une image a été redimmensionnée."
-
 #: ../interfaces.py:20
 msgid "Enable autoscaling."
 msgstr "Activer le redimensionnement automatique."
@@ -35,6 +31,14 @@ msgstr "Activer le redimensionnement automatique."
 #: ../interfaces.py:19
 msgid "Enabled"
 msgstr "Activé"
+
+#: ../interfaces.py:27
+msgid "Higher images will be down sampled."
+msgstr "Hauteur à laquelle les images trop grandes vont être automatiquement redimmensionnées."
+
+#: ../browser/controlpanel.py:15
+msgid "Lets you change the settings of images autoscaling feature."
+msgstr "Vous permet de configurer les paramètres de redimensionnement automatique des images."
 
 #: ../interfaces.py:26
 msgid "Maximum Image Height"
@@ -44,18 +48,6 @@ msgstr "Hauteur maximale pour les images"
 msgid "Maximum Image Width"
 msgstr "Largeur maximale pour les images"
 
-#: ../browser/controlpanel.py:15
-msgid "Lets you change the settings of images autoscaling feature."
-msgstr "Vous permet de configurer les paramètres de redimensionnement automatique des images."
-
-#: ../interfaces.py:27
-msgid "Higher images will be down sampled."
-msgstr "Hauteur à laquelle les images trop grandes vont être automatiquement redimmensionnées."
-
-#: ../interfaces.py:35
-msgid "Wider images will be down sampled."
-msgstr "Largeur à laquelle les images trop grandes vont être automatiquement redimmensionnées."
-
 #: ../subscribers.py:36
 msgid "One image was down sampled on this content."
 msgstr "Une image a été redimmensionnée automatiquement pour ce contenu."
@@ -63,6 +55,14 @@ msgstr "Une image a été redimmensionnée automatiquement pour ce contenu."
 #: ../interfaces.py:42
 msgid "Show message to user"
 msgstr "Afficher un message d'information"
+
+#: ../interfaces.py:43
+msgid "Show message when an image has been down sampled."
+msgstr "Afficher un message d'information à l'utilisateur quand une image a été redimmensionnée."
+
+#: ../interfaces.py:35
+msgid "Wider images will be down sampled."
+msgstr "Largeur à laquelle les images trop grandes vont être automatiquement redimmensionnées."
 
 #. Default: "${nb} images were down sampled on this content."
 #: ../subscribers.py:28

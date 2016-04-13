@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: No\n"
-"POT-Creation-Date: 2016-04-11 13:21+0000\n"
+"POT-Creation-Date: 2016-04-13 13:16+0000\n"
 "PO-Revision-Date: 2016-03-30 11:34+0100\n"
 "Last-Translator: Espen Moe-Nilssen <espen@medialog.no>\n"
 "Language-Team: LANGUAGE <espen@medialog.no>\n"
@@ -24,10 +24,6 @@ msgstr "Autoskalering"
 msgid "Autoscaling settings"
 msgstr "Skaleringsinnstillinger"
 
-#: ../interfaces.py:43
-msgid "Show message when an image has been down sampled."
-msgstr "Vis informasjon til bruker om at bildet har blitt skalert ned"
-
 #: ../interfaces.py:20
 msgid "Enable autoscaling."
 msgstr "Aktive autoskalering"
@@ -35,6 +31,14 @@ msgstr "Aktive autoskalering"
 #: ../interfaces.py:19
 msgid "Enabled"
 msgstr "Aktivert"
+
+#: ../interfaces.py:27
+msgid "Higher images will be down sampled."
+msgstr "Maksimal høyde på  bilder for at de blir nedskalert"
+
+#: ../browser/controlpanel.py:15
+msgid "Lets you change the settings of images autoscaling feature."
+msgstr "Lar deg endre innstillingene for nedskaleringsfunksjonen"
 
 #: ../interfaces.py:26
 msgid "Maximum Image Height"
@@ -44,18 +48,6 @@ msgstr "Maksimum billedhøyde"
 msgid "Maximum Image Width"
 msgstr "Maksimum billedbredde"
 
-#: ../browser/controlpanel.py:15
-msgid "Lets you change the settings of images autoscaling feature."
-msgstr "Lar deg endre innstillingene for nedskaleringsfunksjonen"
-
-#: ../interfaces.py:27
-msgid "Higher images will be down sampled."
-msgstr "Maksimal høyde på  bilder for at de blir nedskalert"
-
-#: ../interfaces.py:35
-msgid "Wider images will be down sampled."
-msgstr "Maksimal bredde på  bilder for at de blir nedskalert"
-
 #: ../subscribers.py:36
 msgid "One image was down sampled on this content."
 msgstr "Et bilde har blitt nedskalert i dette innholdet."
@@ -63,6 +55,14 @@ msgstr "Et bilde har blitt nedskalert i dette innholdet."
 #: ../interfaces.py:42
 msgid "Show message to user"
 msgstr "Vis melding til bruker"
+
+#: ../interfaces.py:43
+msgid "Show message when an image has been down sampled."
+msgstr "Vis informasjon til bruker om at bildet har blitt skalert ned"
+
+#: ../interfaces.py:35
+msgid "Wider images will be down sampled."
+msgstr "Maksimal bredde på  bilder for at de blir nedskalert"
 
 #. Default: "${nb} images were down sampled on this content."
 #: ../subscribers.py:28

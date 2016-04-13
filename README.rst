@@ -30,8 +30,8 @@ Use case
 --------
 
 1. You configure collective.autoscaling to have images with maximum size of height 800px / width 1200px.
-2. You upload a big image : height 2000px / width 4000px.
-3. It will be resized to height 600px / width 1200px (aspect ratio is of course preserved).
+2. One of your user uploads a really big image : height 2000px / width 4000px.
+3. This image will be resized to height 600px / width 1200px (aspect ratio is of course preserved).
 
 
 Limitations

@@ -50,6 +50,7 @@ This product has been translated into
 - English
 - French
 - Norwegian
+- Portuguese
 
 
 Installation

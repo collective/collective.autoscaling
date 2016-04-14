@@ -1,0 +1,70 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Autoscaling\n"
+"POT-Creation-Date: 2016-04-14 07:00+0000\n"
+"PO-Revision-Date: 2016-04-14 07:00+0000\n"
+"Last-Translator: id_jmg@outlook.com\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: pt\n"
+"Language-Name: Português\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collective.autoscaling\n"
+"X-Is-Fallback-For: pt-ao pt-cv pt-gw pt-mz pt-st pt-pt pt-br\n"
+
+#: ../profiles/default/controlpanel.xml
+msgid "Autoscaling"
+msgstr "Redimensionamento automático"
+
+#: ../browser/controlpanel.py:14
+msgid "Autoscaling settings"
+msgstr "Ajustes do redimensionamento automático"
+
+#: ../interfaces.py:20
+msgid "Enable autoscaling."
+msgstr "Ativar o redimensionamento automático."
+
+#: ../interfaces.py:19
+msgid "Enabled"
+msgstr "Ativado"
+
+#: ../interfaces.py:27
+msgid "Higher images will be down sampled."
+msgstr "Altura para a qual as imagens maiores vão ser redimensionadas."
+
+#: ../browser/controlpanel.py:15
+msgid "Lets you change the settings of images autoscaling feature."
+msgstr "Permite mudar os ajustes do redimensionamento automático de imagens."
+
+#: ../interfaces.py:26
+msgid "Maximum Image Height"
+msgstr "Altura máxima para as imagens"
+
+#: ../interfaces.py:34
+msgid "Maximum Image Width"
+msgstr "Largura máxima para as imagens"
+
+#: ../subscribers.py:36
+msgid "One image was down sampled on this content."
+msgstr "Uma imagem foi automaticamente redimensionada neste contexto."
+
+#: ../interfaces.py:42
+msgid "Show message to user"
+msgstr "Mostrar uma mensagem de informação"
+
+#: ../interfaces.py:43
+msgid "Show message when an image has been down sampled."
+msgstr "Mostrar uma mensagem de informação ao utilizador quando uma imagem foi redimensionada."
+
+#: ../interfaces.py:35
+msgid "Wider images will be down sampled."
+msgstr "Largura para a qual as imagens maiores vão ser redimensionadas."
+
+#. Default: "${nb} images were down sampled on this content."
+#: ../subscribers.py:28
+msgid "images_have_been_resized"
+msgstr "${nb} imagens foram automaticamente redimensionadas neste contexto."
+

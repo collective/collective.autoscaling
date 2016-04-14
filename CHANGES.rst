@@ -5,7 +5,8 @@ Changelog
 1.1.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add Portuguese translation
+  [laulaz]
 
 
 1.1 (2016-04-13)

@@ -44,7 +44,7 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'plone.api',
+        'plone.api >= 1.4.11',
         'setuptools',
         'Products.CMFDefault',
     ],

@@ -5,6 +5,9 @@ Changelog
 1.1.1 (unreleased)
 ------------------
 
+- Pin plone.api to avoid any errors (#2)
+  [laulaz]
+
 - Add Portuguese translation
   [laulaz]
 

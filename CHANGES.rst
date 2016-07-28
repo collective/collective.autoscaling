@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.1.1 (unreleased)
+1.1.1 (2016-07-28)
 ------------------
 
 - Pin plone.api to avoid any errors (#2)

@@ -46,7 +46,6 @@ setup(
     install_requires=[
         'plone.api >= 1.4.11',
         'setuptools',
-        'Products.CMFDefault',
     ],
     extras_require={
         'test': [

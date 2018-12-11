@@ -5,7 +5,8 @@ Changelog
 1.1.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Remove useless dependency on CMFDefault (#5)
+  [laulaz]
 
 
 1.1.1 (2016-07-28)

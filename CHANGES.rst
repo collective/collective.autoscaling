@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.1.2 (unreleased)
+1.1.2 (2019-01-15)
 ------------------
 
 - Handle special cases when we don't get a request at ObjectAddedEvent

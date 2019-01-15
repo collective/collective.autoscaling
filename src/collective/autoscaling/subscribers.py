@@ -10,7 +10,7 @@ from collective.autoscaling.utils import get_autoscaling_settings
 
 
 def handle_max_image_size(obj, event):
-    request = event.object.REQUEST
+    request = getattr(event.object, 'REQUEST', None)
     if not ICollectiveAutoscalingLayer.providedBy(request):
         return
 

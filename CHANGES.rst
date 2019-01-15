@@ -5,6 +5,10 @@ Changelog
 1.1.2 (unreleased)
 ------------------
 
+- Handle special cases when we don't get a request at ObjectAddedEvent
+  (example : when an object is added at Zope startup)
+  [laulaz]
+
 - Remove useless dependency on CMFDefault (#5)
   [laulaz]
 

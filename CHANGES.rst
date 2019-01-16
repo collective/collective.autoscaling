@@ -5,6 +5,9 @@ Changelog
 1.1.3 (unreleased)
 ------------------
 
+- Up packages / versions
+  [laulaz]
+
 - Fix travis tests
   [laulaz]
 

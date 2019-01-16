@@ -1,22 +1,16 @@
 language: python
 addons:
   firefox: "62.0.3"
-sudo: false
+sudo: true
 cache:
-  pip: true
   directories:
-    - $HOME/buildout-cache
-python:
-  - 2.7
-before_install:
-  - mkdir -p $HOME/buildout-cache/{eggs,downloads}
-  - mkdir $HOME/.buildout
-  - echo "[buildout]" > $HOME/.buildout/default.cfg
-  - echo "download-cache = $HOME/buildout-cache/downloads" >> $HOME/.buildout/default.cfg
-  - echo "eggs-directory = $HOME/buildout-cache/eggs" >> $HOME/.buildout/default.cfg
+    - eggs
+    - downloads
+python: 2.7
 install:
-  - python bootstrap-buildout.py -c travis.cfg
-  - bin/buildout -Nc travis.cfg
+  - pip install -r requirements.txt
+  - buildout -N buildout:download-cache=downloads annotate
+  - buildout -c travis.cfg -t 30 buildout:download-cache=downloads
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"

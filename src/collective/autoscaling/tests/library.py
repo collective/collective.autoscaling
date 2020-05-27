@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from cStringIO import StringIO
+import sys
+if (sys.version_info > (3, 0)):
+    from io import BytesIO as _io
+else:
+    from cStringIO import StringIO as _io
+    
 from plone import api
 from plone.app.robotframework.remote import RemoteLibrary
 from plone.namedfile.file import NamedBlobImage
@@ -19,9 +24,12 @@ class Image(RemoteLibrary):
             data = image.data
         else:
             data = image.image.data
-        imageFile = StringIO(data)
+        imageFile = _io(data)
         image = PIL.Image.open(imageFile)
-        return image.size
+        image_size = image.size
+        image.close()
+        imageFile.close()
+        return image_size
 
     def delete_image(self, image_url):
         """

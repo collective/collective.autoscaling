@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from cStringIO import StringIO
+import sys
+if (sys.version_info > (3, 0)):
+    from io import BytesIO as _io
+else:
+    from cStringIO import StringIO as _io
+    
 import PIL.Image
 import logging
 
@@ -24,7 +29,7 @@ def scale_images(obj, request):
     resized = 0
     for imageFieldName in imageFieldsNames:
         imageField = getattr(obj, imageFieldName)
-        original_file = StringIO(imageField.data)
+        original_file = _io(imageField.data)
         image = PIL.Image.open(original_file)
 
         maxWidth, maxHeight = get_max_size()
@@ -36,10 +41,13 @@ def scale_images(obj, request):
         image_format = image.format or 'PNG'
         maxsize = (maxWidth, maxHeight)
         image.thumbnail(maxsize)
-        cropped_image_file = StringIO()
+        cropped_image_file = _io()
         image.save(cropped_image_file, image_format, quality=100)
+        image.close()
+        original_file.close()
         cropped_image_file.seek(0)
         imageField.data = cropped_image_file.getvalue()
+        cropped_image_file.close()
         resized += 1
 
     if resized > 0:

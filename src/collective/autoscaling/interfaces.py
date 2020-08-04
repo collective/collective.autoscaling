@@ -38,6 +38,14 @@ class ICollectiveAutoscalingSettings(Interface):
         default=1200
     )
 
+    image_quality = schema.Int(
+        title=_(u"JPEG Quality"),
+        description=_(u"Set Quality for JPEG format; lower value saves space at expense of quality."),
+        required=False,
+        min=50,
+        default=85
+    )
+
     show_message = schema.Bool(
         title=_(u"Show message to user"),
         description=_(u"Show message when an image has been down sampled."),

@@ -5,7 +5,7 @@ if (sys.version_info > (3, 0)):
     from io import BytesIO as _io
 else:
     from cStringIO import StringIO as _io
-    
+
 import PIL.Image
 import logging
 
@@ -40,9 +40,11 @@ def scale_images(obj, request):
 
         image_format = image.format or 'PNG'
         maxsize = (maxWidth, maxHeight)
+        quality = get_autoscaling_settings('image_quality')
         image.thumbnail(maxsize)
         cropped_image_file = _io()
-        image.save(cropped_image_file, image_format, quality=100)
+
+        image.save(cropped_image_file, image_format, quality=quality)
         image.close()
         original_file.close()
         cropped_image_file.seek(0)

@@ -5,7 +5,7 @@ if (sys.version_info > (3, 0)):
     from io import BytesIO as _io
 else:
     from cStringIO import StringIO as _io
-    
+
 from plone import api
 from plone.app.robotframework.remote import RemoteLibrary
 from plone.namedfile.file import NamedBlobImage

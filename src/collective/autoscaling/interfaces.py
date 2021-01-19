@@ -42,8 +42,8 @@ class ICollectiveAutoscalingSettings(Interface):
         title=_(u"JPEG Quality"),
         description=_(u"Set Quality for JPEG format; lower value saves space at expense of quality."),
         required=False,
-        min=50,
-        default=85
+        min=75,
+        default=95
     )
 
     show_message = schema.Bool(

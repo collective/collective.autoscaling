@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Autoscaling\n"
-"POT-Creation-Date: 2016-04-14 07:10+0000\n"
+"POT-Creation-Date: 2020-08-04 02:12+0000\n"
 "PO-Revision-Date: 2016-03-30 11:34+0100\n"
 "Last-Translator: Espen Moe-Nilssen <espen@medialog.no>\n"
 "Language-Team: LANGUAGE <espen@medialog.no>\n"
@@ -34,6 +34,14 @@ msgstr "Aktivert"
 msgid "Higher images will be down sampled."
 msgstr "Maksimal høyde på  bilder for at de blir nedskalert"
 
+#: ../configure.zcml:29
+msgid "Installs the collective.autoscaling add-on."
+msgstr ""
+
+#: ../interfaces.py:42
+msgid "JPEG Quality"
+msgstr "JPEG-kvalitet"
+
 #: ../browser/controlpanel.py:15
 msgid "Lets you change the settings of images autoscaling feature."
 msgstr "Lar deg endre innstillingene for nedskaleringsfunksjonen"
@@ -50,11 +58,15 @@ msgstr "Maksimum billedbredde"
 msgid "One image was down sampled on this content."
 msgstr "Et bilde har blitt nedskalert i dette innholdet."
 
-#: ../interfaces.py:42
+#: ../interfaces.py:43
+msgid "Set Quality for JPEG format; lower value saves space at expense of quality."
+msgstr "Angi kvalitet for JPEG-format; lavere verdi sparer plass på bekostning av kvalitet."
+
+#: ../interfaces.py:50
 msgid "Show message to user"
 msgstr "Vis melding til bruker"
 
-#: ../interfaces.py:43
+#: ../interfaces.py:51
 msgid "Show message when an image has been down sampled."
 msgstr "Vis informasjon til bruker om at bildet har blitt skalert ned"
 
@@ -62,8 +74,11 @@ msgstr "Vis informasjon til bruker om at bildet har blitt skalert ned"
 msgid "Wider images will be down sampled."
 msgstr "Maksimal bredde på  bilder for at de blir nedskalert"
 
+#: ../configure.zcml:29
+msgid "collective.autoscaling"
+msgstr ""
+
 #. Default: "${nb} images were down sampled on this content."
 #: ../subscribers.py:28
 msgid "images_have_been_resized"
 msgstr "${nb} bilder har blitt nedskalert"
-

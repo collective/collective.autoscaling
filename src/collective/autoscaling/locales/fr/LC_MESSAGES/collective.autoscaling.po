@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Autoscaling\n"
-"POT-Creation-Date: 2016-04-14 07:10+0000\n"
+"POT-Creation-Date: 2020-08-04 02:12+0000\n"
 "PO-Revision-Date: 2014-05-06 11:41+0000\n"
 "Last-Translator: Laurent Lasudry <laurent.lasudry@affinitic.be>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,6 +35,14 @@ msgstr "Activé"
 msgid "Higher images will be down sampled."
 msgstr "Hauteur à laquelle les images trop grandes vont être automatiquement redimmensionnées."
 
+#: ../configure.zcml:29
+msgid "Installs the collective.autoscaling add-on."
+msgstr ""
+
+#: ../interfaces.py:42
+msgid "JPEG Quality"
+msgstr "Qualité JPEG"
+
 #: ../browser/controlpanel.py:15
 msgid "Lets you change the settings of images autoscaling feature."
 msgstr "Vous permet de configurer les paramètres de redimensionnement automatique des images."
@@ -51,11 +59,15 @@ msgstr "Largeur maximale pour les images"
 msgid "One image was down sampled on this content."
 msgstr "Une image a été redimmensionnée automatiquement pour ce contenu."
 
-#: ../interfaces.py:42
+#: ../interfaces.py:43
+msgid "Set Quality for JPEG format; lower value saves space at expense of quality."
+msgstr "Détermine la qualité du format JPEG; une valeur plus faible sauve de l'espace au détriment de la qualité."
+
+#: ../interfaces.py:50
 msgid "Show message to user"
 msgstr "Afficher un message d'information"
 
-#: ../interfaces.py:43
+#: ../interfaces.py:51
 msgid "Show message when an image has been down sampled."
 msgstr "Afficher un message d'information à l'utilisateur quand une image a été redimmensionnée."
 
@@ -63,8 +75,11 @@ msgstr "Afficher un message d'information à l'utilisateur quand une image a ét
 msgid "Wider images will be down sampled."
 msgstr "Largeur à laquelle les images trop grandes vont être automatiquement redimmensionnées."
 
+#: ../configure.zcml:29
+msgid "collective.autoscaling"
+msgstr ""
+
 #. Default: "${nb} images were down sampled on this content."
 #: ../subscribers.py:28
 msgid "images_have_been_resized"
 msgstr "${nb} images ont été redimmensionnées automatiquement pour ce contenu."
-

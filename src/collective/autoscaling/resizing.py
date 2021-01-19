@@ -30,8 +30,13 @@ def scale_images(obj, request):
     for imageFieldName in imageFieldsNames:
         imageField = getattr(obj, imageFieldName)
         original_file = _io(imageField.data)
-        image = PIL.Image.open(original_file)
-
+        try:
+            image = PIL.Image.open(original_file)
+        except Exception as e:
+            original_file.close()
+            logger.debug("autoscaling {} : {}".format(imageField, e))
+            continue
+            
         maxWidth, maxHeight = get_max_size()
         width, height = image.size
         if maxHeight >= height and maxWidth >= width:
@@ -42,14 +47,14 @@ def scale_images(obj, request):
         maxsize = (maxWidth, maxHeight)
         quality = get_autoscaling_settings('image_quality')
         image.thumbnail(maxsize)
-        cropped_image_file = _io()
+        scaled_image_file = _io()
 
-        image.save(cropped_image_file, image_format, quality=quality)
+        image.save(scaled_image_file, image_format, quality=quality)
         image.close()
         original_file.close()
-        cropped_image_file.seek(0)
-        imageField.data = cropped_image_file.getvalue()
-        cropped_image_file.close()
+        scaled_image_file.seek(0)
+        imageField.data = scaled_image_file.getvalue()
+        scaled_image_file.close()
         resized += 1
 
     if resized > 0:

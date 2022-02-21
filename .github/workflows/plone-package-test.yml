@@ -43,6 +43,16 @@ jobs:
         pip install -r requirements.txt
         buildout -Nt 5
 
+    - name: Install Firefox
+      uses: browser-actions/setup-firefox@latest
+      with:
+        firefox-version: '92.0'
+
+    - name: Xvfb
+      run: Xvfb :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
+
     - name: Test
+      env:
+        DISPLAY: :99
       run: |
-        bin/test
+        bin/test --all

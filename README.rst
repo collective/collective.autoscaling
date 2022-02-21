@@ -42,7 +42,7 @@ Limitations
 This add-on works only with Dexterity content types.
 
 It has been developed on Plone 4.3, but works with Plone 5 and Plone 6 too.
-Current branch is tested on Python 3 / Plone 6.
+Current branch is tested on Python 3.x / Plone 5.2.x & Plone 6.0.x.
 
 
 Translations

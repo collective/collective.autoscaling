@@ -1,3 +1,1 @@
-setuptools==59.6.0
-zc.buildout==3.0.0rc1
-pip==21.3.1
+-r requirements_plone-6.0.x.txt

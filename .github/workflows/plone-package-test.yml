@@ -10,13 +10,24 @@ on:
 
 jobs:
   test:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     name: Run Tests
 
     strategy:
       matrix:
-        python-version: [3.8]
-        os: [ubuntu-latest]
+        include:
+          - python-version: '3.6'
+            plone-version: '5.2'
+          - python-version: '3.7'
+            plone-version: '5.2'
+          - python-version: '3.7'
+            plone-version: '6.0'
+          - python-version: '3.8'
+            plone-version: '5.2'
+          - python-version: '3.8'
+            plone-version: '6.0'
+          - python-version: '3.9'
+            plone-version: '6.0'
 
     steps:
     - name: Clone repo
@@ -28,8 +39,7 @@ jobs:
         cache-name: cache-eggs
       with:
         path: ./eggs
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.python-version }}
-        restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.python-version }}
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.python-version }}-${{ matrix.plone-version }}
 
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
@@ -38,10 +48,9 @@ jobs:
 
     - name: Install dependencies and run buildout
       run: |
-        sudo apt-get install -qq -y python3-dev
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        buildout -Nt 5
+        pip install -r requirements_plone-${{ matrix.plone-version }}.x.txt
+        buildout -Nt 5 -c plone-${{ matrix.plone-version }}.x.cfg
 
     - name: Install Firefox
       uses: browser-actions/setup-firefox@latest

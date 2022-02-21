@@ -1,7 +1,9 @@
 # -*- coding: UTF-8 -*-
 
-from Products.Five import BrowserView
 from plone import api
+from plone.protect.interfaces import IDisableCSRFProtection
+from Products.Five import BrowserView
+from zope.interface import alsoProvides
 
 from collective.autoscaling.resizing import scale_images
 
@@ -10,6 +12,7 @@ class ResizingView(BrowserView):
     def __call__(self):
         context = self.context
         request = self.request
+        alsoProvides(request, IDisableCSRFProtection)
         result = []
         totalResized = 0
         catalog = api.portal.get_tool(name="portal_catalog")

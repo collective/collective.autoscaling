@@ -5,6 +5,9 @@ Changelog
 1.1.3 (unreleased)
 ------------------
 
+- Fix resize-images view that was saving nothing because of CSRF protection
+  [laulaz]
+
 - Add support for Python 3 / Plone 6
   [marclava, laulaz]
 

@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from cStringIO import StringIO
+import sys
+if (sys.version_info > (3, 0)):
+    from io import BytesIO as _io
+else:
+    from cStringIO import StringIO as _io
+
 import PIL.Image
 import logging
 
@@ -24,9 +29,14 @@ def scale_images(obj, request):
     resized = 0
     for imageFieldName in imageFieldsNames:
         imageField = getattr(obj, imageFieldName)
-        original_file = StringIO(imageField.data)
-        image = PIL.Image.open(original_file)
-
+        original_file = _io(imageField.data)
+        try:
+            image = PIL.Image.open(original_file)
+        except Exception as e:
+            original_file.close()
+            logger.debug("autoscaling {} : {}".format(imageField, e))
+            continue
+            
         maxWidth, maxHeight = get_max_size()
         width, height = image.size
         if maxHeight >= height and maxWidth >= width:
@@ -35,11 +45,16 @@ def scale_images(obj, request):
 
         image_format = image.format or 'PNG'
         maxsize = (maxWidth, maxHeight)
+        quality = get_autoscaling_settings('image_quality')
         image.thumbnail(maxsize)
-        cropped_image_file = StringIO()
-        image.save(cropped_image_file, image_format, quality=100)
-        cropped_image_file.seek(0)
-        imageField.data = cropped_image_file.getvalue()
+        scaled_image_file = _io()
+
+        image.save(scaled_image_file, image_format, quality=quality)
+        image.close()
+        original_file.close()
+        scaled_image_file.seek(0)
+        imageField.data = scaled_image_file.getvalue()
+        scaled_image_file.close()
         resized += 1
 
     if resized > 0:

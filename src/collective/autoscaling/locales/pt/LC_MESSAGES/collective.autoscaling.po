@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Autoscaling\n"
-"POT-Creation-Date: 2016-04-14 07:10+0000\n"
+"POT-Creation-Date: 2020-08-04 02:12+0000\n"
 "PO-Revision-Date: 2016-04-14 07:00+0000\n"
 "Last-Translator: id_jmg@outlook.com\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,6 +35,14 @@ msgstr "Ativado"
 msgid "Higher images will be down sampled."
 msgstr "Altura para a qual as imagens maiores vão ser redimensionadas."
 
+#: ../configure.zcml:29
+msgid "Installs the collective.autoscaling add-on."
+msgstr ""
+
+#: ../interfaces.py:42
+msgid "JPEG Quality"
+msgstr "Qualidade JPEG"
+
 #: ../browser/controlpanel.py:15
 msgid "Lets you change the settings of images autoscaling feature."
 msgstr "Permite mudar os ajustes do redimensionamento automático de imagens."
@@ -51,11 +59,15 @@ msgstr "Largura máxima para as imagens"
 msgid "One image was down sampled on this content."
 msgstr "Uma imagem foi automaticamente redimensionada neste contexto."
 
-#: ../interfaces.py:42
+#: ../interfaces.py:43
+msgid "Set Quality for JPEG format; lower value saves space at expense of quality."
+msgstr "Definir Qualidade para formato JPEG; menor valor poupa espaço em detrimento da qualidade"
+
+#: ../interfaces.py:50
 msgid "Show message to user"
 msgstr "Mostrar uma mensagem de informação"
 
-#: ../interfaces.py:43
+#: ../interfaces.py:51
 msgid "Show message when an image has been down sampled."
 msgstr "Mostrar uma mensagem de informação ao utilizador quando uma imagem foi redimensionada."
 
@@ -63,8 +75,11 @@ msgstr "Mostrar uma mensagem de informação ao utilizador quando uma imagem foi
 msgid "Wider images will be down sampled."
 msgstr "Largura para a qual as imagens maiores vão ser redimensionadas."
 
+#: ../configure.zcml:29
+msgid "collective.autoscaling"
+msgstr ""
+
 #. Default: "${nb} images were down sampled on this content."
 #: ../subscribers.py:28
 msgid "images_have_been_resized"
 msgstr "${nb} imagens foram automaticamente redimensionadas neste contexto."
-

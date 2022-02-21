@@ -24,36 +24,36 @@ import collective.autoscaling
 
 
 class CollectiveAutoscalingLayer(PloneSandboxLayer):
-
     def setUpZope(self, app, configurationContext):
-        self.loadZCML('testing.zcml', package=collective.autoscaling)
-        z2.installProduct(app, 'Products.DateRecurringIndex')
+        self.loadZCML("testing.zcml", package=collective.autoscaling)
+        z2.installProduct(app, "Products.DateRecurringIndex")
 
     def tearDownZope(self, app):
-        z2.uninstallProduct(app, 'Products.DateRecurringIndex')
+        z2.uninstallProduct(app, "Products.DateRecurringIndex")
 
     def setUpPloneSite(self, portal):
-        portal.acl_users.userFolderAddUser('admin',
-                                           'secret',
-                                           ['Manager'],
-                                           [])
-        login(portal, 'admin')
-        portal.portal_workflow.setDefaultChain('one_state_workflow')
-        applyProfile(portal, 'collective.autoscaling:testing')
-        setRoles(portal, TEST_USER_ID, ['Manager'])
-        portal.invokeFactory(
-            "Folder",
-            id="test-folder",
-            title=u"Test Folder"
-        )
+        portal.acl_users.userFolderAddUser("admin", "secret", ["Manager"], [])
+        login(portal, "admin")
+        portal.portal_workflow.setDefaultChain("one_state_workflow")
+        applyProfile(portal, "collective.autoscaling:testing")
+        setRoles(portal, TEST_USER_ID, ["Manager"])
+        portal.invokeFactory("Folder", id="test-folder", title="Test Folder")
 
 
 IMAGE_LIBRARY_FIXTURE = RemoteLibraryLayer(
     bases=(PLONE_FIXTURE,),
-    libraries=(AutoLogin, QuickInstaller, GenericSetup,
-               Content, Users, I18N, MockMailHost,
-               Zope2ServerRemote, Image),
-    name="ImageRemoteLibrary:RobotRemote"
+    libraries=(
+        AutoLogin,
+        QuickInstaller,
+        GenericSetup,
+        Content,
+        Users,
+        I18N,
+        MockMailHost,
+        Zope2ServerRemote,
+        Image,
+    ),
+    name="ImageRemoteLibrary:RobotRemote",
 )
 
 
@@ -62,21 +62,17 @@ COLLECTIVE_AUTOSCALING_FIXTURE = CollectiveAutoscalingLayer()
 
 COLLECTIVE_AUTOSCALING_INTEGRATION_TESTING = IntegrationTesting(
     bases=(COLLECTIVE_AUTOSCALING_FIXTURE,),
-    name='CollectiveAutoscalingLayer:IntegrationTesting'
+    name="CollectiveAutoscalingLayer:IntegrationTesting",
 )
 
 
 COLLECTIVE_AUTOSCALING_FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(COLLECTIVE_AUTOSCALING_FIXTURE,),
-    name='CollectiveAutoscalingLayer:FunctionalTesting'
+    name="CollectiveAutoscalingLayer:FunctionalTesting",
 )
 
 
 COLLECTIVE_AUTOSCALING_ACCEPTANCE_TESTING = FunctionalTesting(
-    bases=(
-        IMAGE_LIBRARY_FIXTURE,
-        COLLECTIVE_AUTOSCALING_FIXTURE,
-        z2.ZSERVER_FIXTURE
-    ),
-    name='CollectiveAutoscalingLayer:AcceptanceTesting'
+    bases=(IMAGE_LIBRARY_FIXTURE, COLLECTIVE_AUTOSCALING_FIXTURE, z2.ZSERVER_FIXTURE),
+    name="CollectiveAutoscalingLayer:AcceptanceTesting",
 )

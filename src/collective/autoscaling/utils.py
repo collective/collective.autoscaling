@@ -30,6 +30,5 @@ def get_image_fields(obj):
 
 
 def get_autoscaling_settings(name):
-    setting = api.portal.get_registry_record(name,
-                                             ICollectiveAutoscalingSettings)
+    setting = api.portal.get_registry_record(name, ICollectiveAutoscalingSettings)
     return setting

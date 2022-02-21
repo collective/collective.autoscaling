@@ -17,5 +17,4 @@ class SettingsEditForm(RegistryEditForm):
     schema = ICollectiveAutoscalingSettings
 
 
-AutoscalingControlPanel = layout.wrap_form(SettingsEditForm,
-                                           ControlPanelFormWrapper)
+AutoscalingControlPanel = layout.wrap_form(SettingsEditForm, ControlPanelFormWrapper)

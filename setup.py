@@ -6,20 +6,21 @@ from setuptools import setup
 
 
 long_description = (
-    open('README.rst').read() +
-    '\n' +
-    'Contributors\n' +
-    '============\n' +
-    '\n' +
-    open('CONTRIBUTORS.rst').read() +
-    '\n' +
-    open('CHANGES.rst').read() +
-    '\n')
+    open("README.rst").read()
+    + "\n"
+    + "Contributors\n"
+    + "============\n"
+    + "\n"
+    + open("CONTRIBUTORS.rst").read()
+    + "\n"
+    + open("CHANGES.rst").read()
+    + "\n"
+)
 
 
 setup(
-    name='collective.autoscaling',
-    version='1.1.3.dev0',
+    name="collective.autoscaling",
+    version="1.1.3.dev0",
     description="Automatic scaling of (too large) images in Plone sites",
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
@@ -33,25 +34,25 @@ setup(
         "Operating System :: OS Independent",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
     ],
-    keywords='Python Plone',
-    author='Laurent Lasudry',
-    author_email='laurent.lasudry@affinitic.be',
-    url='https://pypi.python.org/pypi/collective.autoscaling',
-    license='GPL version 2',
-    packages=find_packages('src', exclude=['ez_setup']),
-    namespace_packages=['collective'],
-    package_dir={'': 'src'},
+    keywords="Python Plone",
+    author="Laurent Lasudry",
+    author_email="laurent.lasudry@affinitic.be",
+    url="https://pypi.python.org/pypi/collective.autoscaling",
+    license="GPL version 2",
+    packages=find_packages("src", exclude=["ez_setup"]),
+    namespace_packages=["collective"],
+    package_dir={"": "src"},
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'plone.api >= 1.4.11',
-        'setuptools',
+        "plone.api >= 1.4.11",
+        "setuptools",
     ],
     extras_require={
-        'test': [
-            'plone.app.testing',
-            'plone.app.contenttypes',
-            'plone.app.robotframework[debug]',
+        "test": [
+            "plone.app.testing",
+            "plone.app.contenttypes",
+            "plone.app.robotframework[debug]",
         ],
     },
     entry_points="""

@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import sys
-if (sys.version_info > (3, 0)):
+
+if sys.version_info > (3, 0):
     from io import BytesIO as _io
 else:
     from cStringIO import StringIO as _io
@@ -13,7 +14,6 @@ import PIL.Image
 
 
 class Image(RemoteLibrary):
-
     def image_dimensions_of(self, image_url):
         """
         Returns image dimensions

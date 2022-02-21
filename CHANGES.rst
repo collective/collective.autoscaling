@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-1.1.3 (unreleased)
-------------------
+1.2 (2022-02-21)
+----------------
 
 - Fix resize-images view that was saving nothing because of CSRF protection
   [laulaz]

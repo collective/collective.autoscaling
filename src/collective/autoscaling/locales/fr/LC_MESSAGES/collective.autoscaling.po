@@ -37,7 +37,7 @@ msgstr "Hauteur à laquelle les images trop grandes vont être automatiquement r
 
 #: ../configure.zcml:27
 msgid "Installs the collective.autoscaling add-on."
-msgstr ""
+msgstr "Ajoute le support du redimensionnement automatique des images."
 
 #: ../interfaces.py:43
 msgid "JPEG Quality"
@@ -73,7 +73,7 @@ msgstr "Afficher un message d'information à l'utilisateur quand une image a ét
 
 #: ../configure.zcml:35
 msgid "Uninstalls the collective.autoscaling add-on."
-msgstr ""
+msgstr "Désinstalle le support du redimensionnement automatique des images."
 
 #: ../interfaces.py:36
 msgid "Wider images will be down sampled."

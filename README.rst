@@ -2,8 +2,9 @@
 collective.autoscaling
 ======================
 
-.. image:: https://travis-ci.org/collective/collective.autoscaling.svg?branch=master
-    :target: https://travis-ci.org/collective/collective.autoscaling
+.. image:: https://github.com/collective/collective.autoscaling/actions/workflows/plone-package-test.yml/badge.svg
+    :target: https://github.com/collective/collective.autoscaling/actions/workflows/plone-package-test.yml
+    :alt: CI Status
 
 
 This package allows automatic scaling of too large images in Plone sites.
@@ -23,6 +24,7 @@ Settings
 - Enable automatic scaling (yes / no)
 - Maximum height at which images will be automatically resized (in pixels)
 - Maximum width at which images will be automatically resized (in pixels)
+- JPEG quality
 - Show information message to user when images have been resized (yes / no)
 
 
@@ -39,7 +41,8 @@ Limitations
 
 This add-on works only with Dexterity content types.
 
-It has been developed on Plone 4.3.7, but should work with Plone 5, too.
+It has been developed on Plone 4.3, but works with Plone 5 and Plone 6 too.
+Current branch is tested on Python 3 / Plone 6.
 
 
 Translations

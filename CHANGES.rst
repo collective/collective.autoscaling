@@ -5,13 +5,16 @@ Changelog
 1.1.3 (unreleased)
 ------------------
 
+- Add support for Python 3 / Plone 6
+  [marclava, laulaz]
+
+- Add new JPEG Quality setting
+  [marclava]
+
+- Improve resizing code
+  [marclava]
+
 - Add uninstall profile
-  [laulaz]
-
-- Up packages / versions
-  [laulaz]
-
-- Fix travis tests
   [laulaz]
 
 

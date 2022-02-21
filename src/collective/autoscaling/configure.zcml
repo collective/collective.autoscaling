@@ -28,4 +28,17 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="collective.autoscaling (uninstall)"
+      directory="profiles/uninstall"
+      description="Uninstalls the collective.autoscaling add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <utility
+      name="collective.autoscaling-hiddenprofiles"
+      factory=".setuphandlers.HiddenProfiles"
+      />
+
 </configure>

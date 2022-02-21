@@ -5,6 +5,9 @@ Changelog
 1.1.3 (unreleased)
 ------------------
 
+- Add uninstall profile
+  [laulaz]
+
 - Up packages / versions
   [laulaz]
 

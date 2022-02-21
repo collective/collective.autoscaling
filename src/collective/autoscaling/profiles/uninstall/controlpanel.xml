@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<object>
+  <configlet
+      action_id="autoscaling.settings"
+      remove="true"
+      />
+</object>

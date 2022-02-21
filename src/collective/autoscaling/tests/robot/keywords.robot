@@ -12,26 +12,25 @@ I am logged in as a ${role}
   Enable autologin as  ${role}
   Go to  ${PLONE_URL}
 
-I go to the control panel
-    Click link  css=#user-name
-    Click link  link=Site Setup
-
-I access collective.autoscaling settings
-    Click link  link=Autoscaling
+I go to the autoscaling control panel
+    Go to  ${PLONE_URL}/@@autoscaling-controlpanel
     Page Should Contain  Lets you change the settings of images autoscaling feature.
 
 I choose to show message to user
     Select Checkbox  id=form-widgets-show_message-0
     Click Button  Save
+    Wait until page contains  Changes saved
 
 I disabled autoscaling
     Unselect Checkbox  id=form-widgets-is_enabled-0
     Click Button  Save
+    Wait until page contains  Changes saved
 
 I change settings to width '${setting_width}' and height '${setting_height}'
     Input text  id=form-widgets-image_max_width  ${setting_width}
     Input text  id=form-widgets-image_max_height  ${setting_height}
     Click Button  Save
+    Wait until page contains  Changes saved
 
 
 # Content manipulation
@@ -66,7 +65,7 @@ I delete the image '${content-id}'
 
 image '${content-id}' is scaled down to width '${setting_width}' and height '${setting_height}' and size '${size}'
     Go to  ${TEST_FOLDER}/${content-id}/view
-    Page Should Contain  Size: ${size}
+    Page Should Contain  ${size}
     ${size} =  image dimensions of  ${TEST_FOLDER_ID}/${content-id}
     ${width} =  Get From List  ${size}  0
     ${height} =  Get From List  ${size}  1
@@ -93,7 +92,7 @@ information message for multiples images ('${nb}') is shown
 
 image '${content-id}' is not scaled down
     Go to  ${TEST_FOLDER}/${content-id}/view
-    Page Should Contain  Size: 64KB
+    Page Should Contain  64.5 KB
 
 
 # View

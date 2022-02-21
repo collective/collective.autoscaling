@@ -22,8 +22,7 @@ Scenario: When I call resize-images view on an empty folder, nothing happens
 
 Scenario: When I call resize-images view on a folder, all images are rescaled
   Given I am logged in as a Manager
-   When I go to the control panel
-    And I access collective.autoscaling settings
+   When I go to the autoscaling control panel
     And I disabled autoscaling
    When I upload a big image called 'big-image.png' in folder '${TEST_FOLDER}'
     And I upload a big image called 'big-image.png' in folder '${TEST_FOLDER}'
@@ -34,8 +33,7 @@ Scenario: When I call resize-images view on a folder, all images are rescaled
 
 Scenario: When I call resize-images view on the Plone site, all images are rescaled
   Given I am logged in as a Manager
-   When I go to the control panel
-    And I access collective.autoscaling settings
+   When I go to the autoscaling control panel
     And I disabled autoscaling
    When I upload a big image called 'big-image.png' in folder '${TEST_FOLDER}'
     And I upload a big image called 'big-image.png' in folder '${PLONE_URL}'

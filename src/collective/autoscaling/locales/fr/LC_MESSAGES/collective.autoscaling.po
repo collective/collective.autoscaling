@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Autoscaling\n"
-"POT-Creation-Date: 2020-08-04 02:12+0000\n"
+"POT-Creation-Date: 2022-02-21 11:58+0000\n"
 "PO-Revision-Date: 2014-05-06 11:41+0000\n"
 "Last-Translator: Laurent Lasudry <laurent.lasudry@affinitic.be>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,23 +23,23 @@ msgstr "Redimensionnement automatique"
 msgid "Autoscaling settings"
 msgstr "Paramètres de redimensionnement automatique"
 
-#: ../interfaces.py:20
+#: ../interfaces.py:21
 msgid "Enable autoscaling."
 msgstr "Activer le redimensionnement automatique."
 
-#: ../interfaces.py:19
+#: ../interfaces.py:20
 msgid "Enabled"
 msgstr "Activé"
 
-#: ../interfaces.py:27
+#: ../interfaces.py:28
 msgid "Higher images will be down sampled."
 msgstr "Hauteur à laquelle les images trop grandes vont être automatiquement redimmensionnées."
 
-#: ../configure.zcml:29
+#: ../configure.zcml:27
 msgid "Installs the collective.autoscaling add-on."
 msgstr ""
 
-#: ../interfaces.py:42
+#: ../interfaces.py:43
 msgid "JPEG Quality"
 msgstr "Qualité JPEG"
 
@@ -47,11 +47,11 @@ msgstr "Qualité JPEG"
 msgid "Lets you change the settings of images autoscaling feature."
 msgstr "Vous permet de configurer les paramètres de redimensionnement automatique des images."
 
-#: ../interfaces.py:26
+#: ../interfaces.py:27
 msgid "Maximum Image Height"
 msgstr "Hauteur maximale pour les images"
 
-#: ../interfaces.py:34
+#: ../interfaces.py:35
 msgid "Maximum Image Width"
 msgstr "Largeur maximale pour les images"
 
@@ -59,24 +59,32 @@ msgstr "Largeur maximale pour les images"
 msgid "One image was down sampled on this content."
 msgstr "Une image a été redimmensionnée automatiquement pour ce contenu."
 
-#: ../interfaces.py:43
+#: ../interfaces.py:44
 msgid "Set Quality for JPEG format; lower value saves space at expense of quality."
 msgstr "Détermine la qualité du format JPEG; une valeur plus faible sauve de l'espace au détriment de la qualité."
 
-#: ../interfaces.py:50
+#: ../interfaces.py:53
 msgid "Show message to user"
 msgstr "Afficher un message d'information"
 
-#: ../interfaces.py:51
+#: ../interfaces.py:54
 msgid "Show message when an image has been down sampled."
 msgstr "Afficher un message d'information à l'utilisateur quand une image a été redimmensionnée."
 
-#: ../interfaces.py:35
+#: ../configure.zcml:35
+msgid "Uninstalls the collective.autoscaling add-on."
+msgstr ""
+
+#: ../interfaces.py:36
 msgid "Wider images will be down sampled."
 msgstr "Largeur à laquelle les images trop grandes vont être automatiquement redimmensionnées."
 
-#: ../configure.zcml:29
+#: ../configure.zcml:27
 msgid "collective.autoscaling"
+msgstr ""
+
+#: ../configure.zcml:35
+msgid "collective.autoscaling (uninstall)"
 msgstr ""
 
 #. Default: "${nb} images were down sampled on this content."

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-08-04 02:12+0000\n"
+"POT-Creation-Date: 2022-02-21 11:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,23 +25,23 @@ msgstr ""
 msgid "Autoscaling settings"
 msgstr ""
 
-#: ../interfaces.py:20
+#: ../interfaces.py:21
 msgid "Enable autoscaling."
 msgstr ""
 
-#: ../interfaces.py:19
+#: ../interfaces.py:20
 msgid "Enabled"
 msgstr ""
 
-#: ../interfaces.py:27
+#: ../interfaces.py:28
 msgid "Higher images will be down sampled."
 msgstr ""
 
-#: ../configure.zcml:29
+#: ../configure.zcml:27
 msgid "Installs the collective.autoscaling add-on."
 msgstr ""
 
-#: ../interfaces.py:42
+#: ../interfaces.py:43
 msgid "JPEG Quality"
 msgstr ""
 
@@ -49,11 +49,11 @@ msgstr ""
 msgid "Lets you change the settings of images autoscaling feature."
 msgstr ""
 
-#: ../interfaces.py:26
+#: ../interfaces.py:27
 msgid "Maximum Image Height"
 msgstr ""
 
-#: ../interfaces.py:34
+#: ../interfaces.py:35
 msgid "Maximum Image Width"
 msgstr ""
 
@@ -61,24 +61,32 @@ msgstr ""
 msgid "One image was down sampled on this content."
 msgstr ""
 
-#: ../interfaces.py:43
+#: ../interfaces.py:44
 msgid "Set Quality for JPEG format; lower value saves space at expense of quality."
 msgstr ""
 
-#: ../interfaces.py:50
+#: ../interfaces.py:53
 msgid "Show message to user"
 msgstr ""
 
-#: ../interfaces.py:51
+#: ../interfaces.py:54
 msgid "Show message when an image has been down sampled."
 msgstr ""
 
-#: ../interfaces.py:35
+#: ../configure.zcml:35
+msgid "Uninstalls the collective.autoscaling add-on."
+msgstr ""
+
+#: ../interfaces.py:36
 msgid "Wider images will be down sampled."
 msgstr ""
 
-#: ../configure.zcml:29
+#: ../configure.zcml:27
 msgid "collective.autoscaling"
+msgstr ""
+
+#: ../configure.zcml:35
+msgid "collective.autoscaling (uninstall)"
 msgstr ""
 
 #. Default: "${nb} images were down sampled on this content."

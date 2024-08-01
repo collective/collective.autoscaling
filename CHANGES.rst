@@ -5,7 +5,8 @@ Changelog
 1.2.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix typos in french translations
+  [remdub]
 
 
 1.2 (2022-02-21)

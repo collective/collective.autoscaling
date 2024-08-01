@@ -33,7 +33,7 @@ msgstr "Activé"
 
 #: ../interfaces.py:28
 msgid "Higher images will be down sampled."
-msgstr "Hauteur à laquelle les images trop grandes vont être automatiquement redimmensionnées."
+msgstr "Hauteur à laquelle les images trop grandes vont être automatiquement redimensionnées."
 
 #: ../configure.zcml:27
 msgid "Installs the collective.autoscaling add-on."
@@ -57,7 +57,7 @@ msgstr "Largeur maximale pour les images"
 
 #: ../subscribers.py:36
 msgid "One image was down sampled on this content."
-msgstr "Une image a été redimmensionnée automatiquement pour ce contenu."
+msgstr "Une image a été redimensionnée automatiquement pour ce contenu."
 
 #: ../interfaces.py:44
 msgid "Set Quality for JPEG format; lower value saves space at expense of quality."
@@ -69,7 +69,7 @@ msgstr "Afficher un message d'information"
 
 #: ../interfaces.py:54
 msgid "Show message when an image has been down sampled."
-msgstr "Afficher un message d'information à l'utilisateur quand une image a été redimmensionnée."
+msgstr "Afficher un message d'information à l'utilisateur quand une image a été redimensionnée."
 
 #: ../configure.zcml:35
 msgid "Uninstalls the collective.autoscaling add-on."
@@ -77,7 +77,7 @@ msgstr "Désinstalle le support du redimensionnement automatique des images."
 
 #: ../interfaces.py:36
 msgid "Wider images will be down sampled."
-msgstr "Largeur à laquelle les images trop grandes vont être automatiquement redimmensionnées."
+msgstr "Largeur à laquelle les images trop grandes vont être automatiquement redimensionnées."
 
 #: ../configure.zcml:27
 msgid "collective.autoscaling"
@@ -90,4 +90,4 @@ msgstr ""
 #. Default: "${nb} images were down sampled on this content."
 #: ../subscribers.py:28
 msgid "images_have_been_resized"
-msgstr "${nb} images ont été redimmensionnées automatiquement pour ce contenu."
+msgstr "${nb} images ont été redimensionnées automatiquement pour ce contenu."

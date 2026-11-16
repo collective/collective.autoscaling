@@ -34,7 +34,12 @@ requires-python = ">=3.10"
 authors = [
     {name = "Laurent Lasudry",email = "laurent.lasudry@affinitic.be"},
 ]
-dependencies = ["plone.api >= 1.4.11"]
+dependencies = [
+    "Pillow",
+    "Products.CMFPlone",
+    "plone.api",
+    "plone.base",
+]
 keywords = ["Python", "Plone"]
 
 [project.entry-points."plone.autoinclude.plugin"]
@@ -45,6 +50,11 @@ test = [
     "plone.app.contenttypes",
     "plone.app.robotframework[debug]",
     "plone.app.testing",
+    "plone.testing",
+    "robotsuite",
+    "zest.releaser[recommended]",
+    "zestreleaser.towncrier",
+    "zope.testrunner",
 ]
 
 [project.urls]

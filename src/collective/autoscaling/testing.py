@@ -16,7 +16,9 @@ from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
-from plone.testing import z2
+from plone.testing.zope import installProduct
+from plone.testing.zope import uninstallProduct
+from plone.testing.zope import WSGI_SERVER_FIXTURE
 
 import collective.autoscaling
 
@@ -24,10 +26,10 @@ import collective.autoscaling
 class CollectiveAutoscalingLayer(PloneSandboxLayer):
     def setUpZope(self, app, configurationContext):
         self.loadZCML("testing.zcml", package=collective.autoscaling)
-        z2.installProduct(app, "Products.DateRecurringIndex")
+        installProduct(app, "Products.DateRecurringIndex")
 
     def tearDownZope(self, app):
-        z2.uninstallProduct(app, "Products.DateRecurringIndex")
+        uninstallProduct(app, "Products.DateRecurringIndex")
 
     def setUpPloneSite(self, portal):
         portal.acl_users.userFolderAddUser("admin", "secret", ["Manager"], [])
@@ -71,6 +73,6 @@ COLLECTIVE_AUTOSCALING_FUNCTIONAL_TESTING = FunctionalTesting(
 
 
 COLLECTIVE_AUTOSCALING_ACCEPTANCE_TESTING = FunctionalTesting(
-    bases=(IMAGE_LIBRARY_FIXTURE, COLLECTIVE_AUTOSCALING_FIXTURE, z2.ZSERVER_FIXTURE),
+    bases=(IMAGE_LIBRARY_FIXTURE, COLLECTIVE_AUTOSCALING_FIXTURE, WSGI_SERVER_FIXTURE),
     name="CollectiveAutoscalingLayer:AcceptanceTesting",
 )

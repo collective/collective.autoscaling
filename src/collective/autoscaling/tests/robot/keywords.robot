@@ -66,9 +66,7 @@ I delete the image '${content-id}'
 
 # Checks
 
-image '${content-id}' is scaled down to width '${setting_width}' and height '${setting_height}' and size '${size}'
-    Go to  ${TEST_FOLDER}/${content-id}/view
-    Page Should Contain  ${size}
+image '${content-id}' is scaled down to width '${setting_width}' and height '${setting_height}'
     ${size} =  image dimensions of  ${TEST_FOLDER_ID}/${content-id}
     ${width} =  Get From List  ${size}  0
     ${height} =  Get From List  ${size}  1

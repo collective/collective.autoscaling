@@ -1,10 +1,7 @@
-# -*- coding: utf-8 -*-
-
+from collective.autoscaling import _
 from zope import schema
 from zope.interface import Interface
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
-
-from collective.autoscaling import _
 
 
 class ICollectiveAutoscalingLayer(IDefaultBrowserLayer):

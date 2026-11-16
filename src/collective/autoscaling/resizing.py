@@ -1,17 +1,9 @@
-# -*- coding: utf-8 -*-
-
-import sys
-
-if sys.version_info > (3, 0):
-    from io import BytesIO as _io
-else:
-    from cStringIO import StringIO as _io
-
-import PIL.Image
-import logging
-
 from collective.autoscaling.utils import get_autoscaling_settings
 from collective.autoscaling.utils import get_image_fields
+from io import BytesIO
+
+import logging
+import PIL.Image
 
 logger = logging.getLogger("collective.autoscaling")
 
@@ -30,12 +22,12 @@ def scale_images(obj, request):
     resized = 0
     for imageFieldName in imageFieldsNames:
         imageField = getattr(obj, imageFieldName)
-        original_file = _io(imageField.data)
+        original_file = BytesIO(imageField.data)
         try:
             image = PIL.Image.open(original_file)
         except Exception as e:
             original_file.close()
-            logger.debug("autoscaling {} : {}".format(imageField, e))
+            logger.debug(f"autoscaling {imageField} : {e}")
             continue
 
         maxWidth, maxHeight = get_max_size()
@@ -48,7 +40,7 @@ def scale_images(obj, request):
         maxsize = (maxWidth, maxHeight)
         quality = get_autoscaling_settings("image_quality")
         image.thumbnail(maxsize)
-        scaled_image_file = _io()
+        scaled_image_file = BytesIO()
 
         image.save(scaled_image_file, image_format, quality=quality)
         image.close()
@@ -60,8 +52,6 @@ def scale_images(obj, request):
 
     if resized > 0:
         obj.reindexObject()
-        logger.debug(
-            "{} images resized for object {}".format(resized, obj.absolute_url())
-        )
+        logger.debug(f"{resized} images resized for object {obj.absolute_url()}")
 
     return resized

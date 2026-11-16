@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
-from collective.autoscaling.testing import (
+from collective.autoscaling.testing import (  # noqa
     COLLECTIVE_AUTOSCALING_ACCEPTANCE_TESTING,
-)  # noqa
+)
 from plone.app.testing import ROBOT_TEST_LEVEL
 from plone.testing import layered
 

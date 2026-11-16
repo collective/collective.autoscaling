@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from plone import api
 
 PROFILEID = "profile-collective.autoscaling:default"

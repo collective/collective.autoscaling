@@ -1,8 +1,8 @@
-# -*- coding: utf-8 -*-
 """Setup tests for this package."""
-from collective.autoscaling.testing import (
+
+from collective.autoscaling.testing import (  # noqa
     COLLECTIVE_AUTOSCALING_INTEGRATION_TESTING,
-)  # noqa
+)
 from Products.CMFPlone.utils import get_installer
 
 import unittest

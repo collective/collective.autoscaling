@@ -1,11 +1,8 @@
-# -*- coding: utf-8 -*-
-
+from collective.autoscaling.interfaces import ICollectiveAutoscalingSettings
 from plone import api
 from plone.behavior.interfaces import IBehaviorAssignable
 from plone.namedfile.interfaces import IImage
 from zope.schema import getFieldsInOrder
-
-from collective.autoscaling.interfaces import ICollectiveAutoscalingSettings
 
 
 def get_all_fields(obj):
@@ -13,13 +10,11 @@ def get_all_fields(obj):
     if type_info is None:
         return
     schema = type_info.lookupSchema()
-    for field in getFieldsInOrder(schema):
-        yield field
+    yield from getFieldsInOrder(schema)
     behavior_assignable = IBehaviorAssignable(obj)
     if behavior_assignable:
         for behavior in behavior_assignable.enumerateBehaviors():
-            for field in getFieldsInOrder(behavior.interface):
-                yield field
+            yield from getFieldsInOrder(behavior.interface)
 
 
 def get_image_fields(obj):

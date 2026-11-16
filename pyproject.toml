@@ -6,6 +6,56 @@ requires = ["setuptools>=68.2,<83", "wheel"]
 
 
 
+# START-MARKER-MANUAL-CONFIG
+# Anything from here until END-MARKER-MANUAL-CONFIG
+# will be kept by plone.meta
+
+[project]
+name = "collective.autoscaling"
+version = "2.0.0.dev0"
+description = "Automatic scaling of (too large) images in Plone sites"
+classifiers = [
+    "Environment :: Web Environment",
+    "Framework :: Plone",
+    "Framework :: Plone :: 6.1",
+    "Framework :: Plone :: 6.2",
+    "Framework :: Plone :: Addon",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+license = "GPL-2.0-only"
+dynamic = ["readme"]
+requires-python = ">=3.10"
+authors = [
+    {name = "Laurent Lasudry",email = "laurent.lasudry@affinitic.be"},
+]
+dependencies = ["plone.api >= 1.4.11"]
+keywords = ["Python", "Plone"]
+
+[project.entry-points."plone.autoinclude.plugin"]
+target = "plone"
+
+[project.optional-dependencies]
+test = [
+    "plone.app.contenttypes",
+    "plone.app.robotframework[debug]",
+    "plone.app.testing",
+]
+
+[project.urls]
+PyPI = "https://pypi.org/project/collective.autoscaling"
+Source = "https://github.com/collective/collective.autoscaling"
+Issues = "https://github.com/collective/collective.autoscaling/issues"
+Changelog = "https://github.com/collective/collective.autoscaling/blob/master/CHANGES.md"
+
+[tool.setuptools.dynamic]
+readme = {file = ["README.md", "CONTRIBUTORS.md", "CHANGES.md"], content-type = "text/markdown"}
+# END-MARKER-MANUAL-CONFIG
+
 [tool.towncrier]
 directory = "news/"
 filename = "CHANGES.md"

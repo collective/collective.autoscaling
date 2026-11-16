@@ -6,14 +6,11 @@ from setuptools import setup
 
 
 long_description = (
-    open("README.rst").read()
+    open("README.md").read()
     + "\n"
-    + "Contributors\n"
-    + "============\n"
+    + open("CONTRIBUTORS.md").read()
     + "\n"
-    + open("CONTRIBUTORS.rst").read()
-    + "\n"
-    + open("CHANGES.rst").read()
+    + open("CHANGES.md").read()
     + "\n"
 )
 
@@ -23,6 +20,7 @@ setup(
     version="1.2.1.dev0",
     description="Automatic scaling of (too large) images in Plone sites",
     long_description=long_description,
+    long_description_content_type="text/markdown",
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         "Environment :: Web Environment",

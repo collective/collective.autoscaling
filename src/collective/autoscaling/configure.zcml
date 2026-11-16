@@ -7,6 +7,12 @@
 
   <i18n:registerTranslations directory="locales" />
 
+  <!-- cmf.ManagePortal, used by the views: the package can be loaded before Plone -->
+  <include
+      package="Products.CMFCore"
+      file="permissions.zcml"
+      />
+
   <include package=".browser" />
   <include file="upgrades.zcml" />
 

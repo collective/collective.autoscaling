@@ -2,8 +2,31 @@
 
 <!-- towncrier release notes start -->
 
-## 1.2.1 (unreleased)
+## 2.0.0 (unreleased)
 
+
+- Breaking: replace the `pkg_resources` namespace of `collective` with a
+  PEP 420 native namespace. Support Plone 6.1 and 6.2 only, on Python 3.10
+  to 3.13. Use 1.x for Plone 4.3 to 6.0.
+  [remdub]
+
+- Import `IPloneSiteRoot`, `INonInstallable` and `get_installer` from
+  `plone.base` instead of the aliases Plone 6.2 deprecates, and use
+  `plone.testing.zope` in the test layers.
+  [remdub]
+
+- Include the CMFCore permissions in `configure.zcml`, so the package also
+  loads when it is included before Plone (`zcml_package_includes`).
+  [remdub]
+
+- Run the robot scenarios on the Plone 6.2 classic UI.
+  [remdub]
+
+- Configure the package with plone.meta 2.12.0 (test matrix on Plone 6.2.3
+  and 6.1), move its metadata to `pyproject.toml`, convert the documentation
+  to Markdown and run the development environment on Plone 6.2.3 with uv
+  instead of buildout.
+  [remdub]
 
 - Fix typos in french translations
   [remdub]

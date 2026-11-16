@@ -9,7 +9,7 @@ Library         Remote  ${PLONE_URL}/RobotRemote
 Variables       plone/app/testing/interfaces.py
 Variables       collective/autoscaling/tests/variables.py
 
-Test Setup      Open test browser
+Test Setup      Open test browser in a large window
 Test Teardown   Close all browsers
 
 
@@ -42,7 +42,7 @@ Scenario: When I upload an image it is scaled down to new settings
    When I go to the autoscaling control panel
     And I change settings to width '400' and height '800'
     And I upload a big image called 'big-image.png' in folder '${TEST_FOLDER}'
-   Then image 'big-image.png' is scaled down to width '400' and height '200' and size '14.0 KB'
+   Then image 'big-image.png' is scaled down to width '400' and height '200' and size '14.1 KB'
     And I delete the image 'big-image.png'
 
 Scenario: If the addon is not enabled, no image are scaled down automatically

@@ -12,6 +12,10 @@ extra_lines = """
 htmlcov/
 .mxdev_cache/
 requirements.txt
+# robotsuite output
+robot_*.html
+robot_*.xml
+/test_*/
 """
 
 [pyproject]

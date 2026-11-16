@@ -6,6 +6,14 @@ ${TEST_FOLDER} =  ${PLONE_URL}/${TEST_FOLDER_ID}
 
 *** Keywords ***
 
+# Browser
+
+Open test browser in a large window
+    # Plone 6 toolbar covers the form buttons in the small default window
+    Open test browser
+    Set Window Size  1920  1080
+
+
 # Settings
 
 I am logged in as a ${role}
@@ -36,10 +44,7 @@ I change settings to width '${setting_width}' and height '${setting_height}'
 # Content manipulation
 
 I upload a big image called '${title}' in folder '${folder}'
-    Go to  ${folder}
-    Open Add New Menu
-    Click Link  link=Image
-    Wait Until Page Contains  Image
+    Go to  ${folder}/++add++Image
     Input text  name=form.widgets.title  ${title}
     Choose File  name=form.widgets.image  ${PATH_TO_TEST_FILES}/${title}
     Click Button  Save
@@ -47,9 +52,7 @@ I upload a big image called '${title}' in folder '${folder}'
     Page Should Contain  Item created
 
 I create a content called '${title}' with two image fields using image '${image}'
-    Go to  ${TEST_FOLDER}
-    Open Add New Menu
-    Click Link  link=dexterity content type with two image fields
+    Go to  ${TEST_FOLDER}/++add++dexterity_content_type_with_two_image_fields
     Input text  name=form.widgets.IDublinCore.title  ${title}
     Choose File  name=form.widgets.first_image  ${PATH_TO_TEST_FILES}/${image}
     Choose File  name=form.widgets.second_image  ${PATH_TO_TEST_FILES}/${image}

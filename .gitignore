@@ -53,6 +53,10 @@ local.cfg
 htmlcov/
 .mxdev_cache/
 requirements.txt
+# robotsuite output
+robot_*.html
+robot_*.xml
+/test_*/
 
 ##
 # Add extra configuration options in .meta.toml:

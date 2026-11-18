@@ -10,7 +10,7 @@ requires = ["setuptools>=68.2,<83", "wheel"]
 
 [project]
 name = "collective.autoscaling"
-version = "2.0.0"
+version = "2.0.1.dev0"
 description = "Automatic scaling of (too large) images in Plone sites"
 classifiers = [
     "Development Status :: 5 - Production/Stable",

@@ -2,9 +2,16 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:i18n="http://namespaces.zope.org/i18n"
-    i18n_domain="collective.autoscaling">
+    i18n_domain="collective.autoscaling"
+    >
 
   <i18n:registerTranslations directory="locales" />
+
+  <!-- cmf.ManagePortal, used by the views: the package can be loaded before Plone -->
+  <include
+      package="Products.CMFCore"
+      file="permissions.zcml"
+      />
 
   <include package=".browser" />
   <include file="upgrades.zcml" />
@@ -12,32 +19,34 @@
   <subscriber
       for="plone.dexterity.interfaces.IDexterityContent
            zope.lifecycleevent.ObjectAddedEvent"
-      handler=".subscribers.handle_max_image_size" />
+      handler=".subscribers.handle_max_image_size"
+      />
 
   <subscriber
       for="plone.dexterity.interfaces.IDexterityContent
            zope.lifecycleevent.IObjectModifiedEvent"
-      handler=".subscribers.handle_max_image_size" />
+      handler=".subscribers.handle_max_image_size"
+      />
 
   <genericsetup:registerProfile
       name="default"
       title="collective.autoscaling"
-      directory="profiles/default"
       description="Installs the collective.autoscaling add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/default"
       />
 
   <genericsetup:registerProfile
       name="uninstall"
       title="collective.autoscaling (uninstall)"
-      directory="profiles/uninstall"
       description="Uninstalls the collective.autoscaling add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/uninstall"
       />
 
   <utility
-      name="collective.autoscaling-hiddenprofiles"
       factory=".setuphandlers.HiddenProfiles"
+      name="collective.autoscaling-hiddenprofiles"
       />
 
 </configure>

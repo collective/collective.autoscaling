@@ -1,15 +1,8 @@
-# -*- coding: utf-8 -*-
-
-import sys
-
-if sys.version_info > (3, 0):
-    from io import BytesIO as _io
-else:
-    from cStringIO import StringIO as _io
-
+from io import BytesIO
 from plone import api
 from plone.app.robotframework.remote import RemoteLibrary
 from plone.namedfile.file import NamedBlobImage
+
 import PIL.Image
 
 
@@ -24,7 +17,7 @@ class Image(RemoteLibrary):
             data = image.data
         else:
             data = image.image.data
-        imageFile = _io(data)
+        imageFile = BytesIO(data)
         image = PIL.Image.open(imageFile)
         image_size = image.size
         image.close()

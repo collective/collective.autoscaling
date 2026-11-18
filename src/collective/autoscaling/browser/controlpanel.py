@@ -1,12 +1,9 @@
-# -*- coding: utf-8 -*-
-
+from collective.autoscaling import _
+from collective.autoscaling.interfaces import ICollectiveAutoscalingSettings
 from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
 from plone.app.registry.browser.controlpanel import RegistryEditForm
 from plone.z3cform import layout
 from z3c.form import form
-
-from collective.autoscaling import _
-from collective.autoscaling.interfaces import ICollectiveAutoscalingSettings
 
 
 class SettingsEditForm(RegistryEditForm):

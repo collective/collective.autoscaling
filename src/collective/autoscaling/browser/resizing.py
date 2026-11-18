@@ -1,11 +1,8 @@
-# -*- coding: UTF-8 -*-
-
+from collective.autoscaling.resizing import scale_images
 from plone import api
 from plone.protect.interfaces import IDisableCSRFProtection
 from Products.Five import BrowserView
 from zope.interface import alsoProvides
-
-from collective.autoscaling.resizing import scale_images
 
 
 class ResizingView(BrowserView):
@@ -33,8 +30,6 @@ class ResizingView(BrowserView):
         if not result:
             result.append("Nothing has to be done.")
         else:
-            result.append("Finished to resize {} images.".format(totalResized))
-        result.insert(
-            0, "Scaling every images under folder {}.".format(context.absolute_url())
-        )
+            result.append(f"Finished to resize {totalResized} images.")
+        result.insert(0, f"Scaling every images under folder {context.absolute_url()}.")
         return "\n".join(result)

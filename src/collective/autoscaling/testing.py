@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*-
-
+from collective.autoscaling.tests.library import Image
 from plone.app.robotframework.autologin import AutoLogin
 from plone.app.robotframework.content import Content
 from plone.app.robotframework.genericsetup import GenericSetup
@@ -9,27 +8,28 @@ from plone.app.robotframework.quickinstaller import QuickInstaller
 from plone.app.robotframework.remote import RemoteLibraryLayer
 from plone.app.robotframework.server import Zope2ServerRemote
 from plone.app.robotframework.users import Users
+from plone.app.testing import applyProfile
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
+from plone.app.testing import login
 from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
-from plone.app.testing import TEST_USER_ID
-from plone.app.testing import applyProfile
-from plone.app.testing import login
 from plone.app.testing import setRoles
-from plone.testing import z2
+from plone.app.testing import TEST_USER_ID
+from plone.testing.zope import installProduct
+from plone.testing.zope import uninstallProduct
+from plone.testing.zope import WSGI_SERVER_FIXTURE
 
-from collective.autoscaling.tests.library import Image
 import collective.autoscaling
 
 
 class CollectiveAutoscalingLayer(PloneSandboxLayer):
     def setUpZope(self, app, configurationContext):
         self.loadZCML("testing.zcml", package=collective.autoscaling)
-        z2.installProduct(app, "Products.DateRecurringIndex")
+        installProduct(app, "Products.DateRecurringIndex")
 
     def tearDownZope(self, app):
-        z2.uninstallProduct(app, "Products.DateRecurringIndex")
+        uninstallProduct(app, "Products.DateRecurringIndex")
 
     def setUpPloneSite(self, portal):
         portal.acl_users.userFolderAddUser("admin", "secret", ["Manager"], [])
@@ -73,6 +73,6 @@ COLLECTIVE_AUTOSCALING_FUNCTIONAL_TESTING = FunctionalTesting(
 
 
 COLLECTIVE_AUTOSCALING_ACCEPTANCE_TESTING = FunctionalTesting(
-    bases=(IMAGE_LIBRARY_FIXTURE, COLLECTIVE_AUTOSCALING_FIXTURE, z2.ZSERVER_FIXTURE),
+    bases=(IMAGE_LIBRARY_FIXTURE, COLLECTIVE_AUTOSCALING_FIXTURE, WSGI_SERVER_FIXTURE),
     name="CollectiveAutoscalingLayer:AcceptanceTesting",
 )

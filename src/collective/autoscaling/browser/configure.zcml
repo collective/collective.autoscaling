@@ -1,11 +1,12 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
-    i18n_domain="collective.autoscaling">
+    i18n_domain="collective.autoscaling"
+    >
 
   <browser:page
       name="resize-images"
-      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      for="plone.base.interfaces.IPloneSiteRoot"
       class=".resizing.ResizingView"
       permission="cmf.ManagePortal"
       layer="..interfaces.ICollectiveAutoscalingLayer"
@@ -21,7 +22,7 @@
 
   <browser:page
       name="autoscaling-controlpanel"
-      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      for="plone.base.interfaces.IPloneSiteRoot"
       class=".controlpanel.AutoscalingControlPanel"
       permission="cmf.ManagePortal"
       layer="..interfaces.ICollectiveAutoscalingLayer"

@@ -1,6 +1,5 @@
 #!/bin/bash
-# i18ndude should be available in current $PATH (eg by running
-# ``export PATH=$PATH:$BUILDOUT_DIR/bin`` when i18ndude is located in your buildout's bin directory)
+# Run it with ``make i18n``, which installs i18ndude in .venv and puts it in $PATH.
 #
 # For every language you want to translate into you need a
 # locales/[language]/LC_MESSAGES/collective.autoscaling.po

@@ -1,12 +1,9 @@
-# -*- coding: utf-8 -*-
-
-from plone import api
-from zope.i18n import translate
-
 from collective.autoscaling import _
 from collective.autoscaling.interfaces import ICollectiveAutoscalingLayer
 from collective.autoscaling.resizing import scale_images
 from collective.autoscaling.utils import get_autoscaling_settings
+from plone import api
+from zope.i18n import translate
 
 
 def handle_max_image_size(obj, event):

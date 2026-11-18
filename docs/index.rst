@@ -1,5 +1,0 @@
-====================
-collective.autoscaling
-====================
-
-User documentation

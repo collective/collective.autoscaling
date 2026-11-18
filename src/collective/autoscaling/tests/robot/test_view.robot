@@ -9,7 +9,7 @@ Library         Remote  ${PLONE_URL}/RobotRemote
 Variables       plone/app/testing/interfaces.py
 Variables       collective/autoscaling/tests/variables.py
 
-Test Setup      Open test browser
+Test Setup      Open test browser in a large window
 Test Teardown   Close all browsers
 
 

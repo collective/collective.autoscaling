@@ -34,7 +34,8 @@ There is also a view (`@@resize-images`) that you can call to scale existing ima
 
 This add-on works only with Dexterity content types.
 
-Version 2.x supports Plone 6.1 and 6.2, on Python 3.10 to 3.13.
+Version 2.x supports Plone 6.1 on Python 3.10 to 3.13, and Plone 6.2 on Python
+3.10 to 3.14.
 For Plone 4.3 to 6.0, use collective.autoscaling 1.x.
 
 
